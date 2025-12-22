@@ -1,8 +1,7 @@
 import { defineConfig } from 'astro/config';
 
-// https://astro.build/config
-export default defineConfig({
-  site: 'https://padmanandwarrier.com',
-  base: '/',  // Root path for custom domain (not subpath)
-  output: 'static',
-});
+   export default defineConfig({
+     site: 'https://pwarrier108.github.io/my-website',
+     base: '/my-website',
+     output: 'static',
+   });
