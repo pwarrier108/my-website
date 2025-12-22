@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const essays = await getCollection('essays');
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title="Ideas - Padmanand Warrier" currentPage="ideas">
+    <div class="page-container">
+        
+        <h1>Ideas</h1>
+        
+        <p class="section-intro">
+            Essays, reflections, and ongoing thinking. Systems philosophy, technology patterns, and sense-making across decades. Writing unified by ideas, not format—whether canonical essays meant to endure, interpretive reflections, or time-bound observations.
+        </p>
+
+        {essays.length > 0 ? (
+            <ul class="content-list">
+                {essays.map((essay) => (
+                    <li class="content-item">
+                        <h3 class="content-item-title">
+                            <a href={`${base}ideas/${essay.slug}`}>{essay.data.title}</a>
+                        </h3>
+                        <div class="metadata">
+                            <div class="metadata-item">
+                                <span class="metadata-label">Published</span> {new Date(essay.data.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long' })}
+                            </div>
+                            {essay.data.era && (
+                                <div class="metadata-item">
+                                    <span class="metadata-label">Era:</span> {essay.data.era}
+                                </div>
+                            )}
+                            {essay.data.themes && essay.data.themes.length > 0 && (
+                                <div class="metadata-item">
+                                    <span class="metadata-label">Themes:</span>
+                                    <div class="metadata-themes">
+                                        {essay.data.themes.map((theme) => (
+                                            <span class="metadata-theme">{theme}</span>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+                        {essay.data.summary && (
+                            <p class="content-item-summary">{essay.data.summary}</p>
+                        )}
+                    </li>
+                ))}
+            </ul>
+        ) : (
+            <p class="text-muted">Essays and reflections will appear here as they are published.</p>
+        )}
+
+    </div>
+</BaseLayout>

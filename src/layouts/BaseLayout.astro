@@ -1,27 +1,40 @@
 ---
-const { title } = Astro.props;
+import '../styles/global.css';
+
+interface Props {
+    title: string;
+    currentPage?: string;
+}
+
+const { title, currentPage = '' } = Astro.props;
 const base = import.meta.env.BASE_URL;
 ---
 
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title}</title>
-  </head>
-
-  <body>
-    <nav>
-      <a href={base}>Home</a> |
-      <a href={`${base}/work`}>Work</a> |
-      <a href={`${base}/writing`}>Writing</a> |
-      <a href={`${base}/service`}>Service</a> |
-      <a href={`${base}/values`}>Values</a> |
-      <a href={`${base}/reflections`}>Reflections</a> |
-      <a href={`${base}/blog`}>Blog</a>
+    <meta name="description" content="Padmanand Warrier - Technology, Service, Values across eras">
+</head>
+<body>
+    <nav class="site-nav">
+        <div class="nav-container">
+            <a href={base} class={currentPage === 'home' ? 'current' : ''}>Home</a>
+            <span class="nav-divider">|</span>
+            <a href={`${base}seva`} class={currentPage === 'seva' ? 'current' : ''}>Seva</a>
+            <span class="nav-divider">|</span>
+            <a href={`${base}work`} class={currentPage === 'work' ? 'current' : ''}>Work</a>
+            <span class="nav-divider">|</span>
+            <a href={`${base}ideas`} class={currentPage === 'ideas' ? 'current' : ''}>Ideas</a>
+            <span class="nav-divider">|</span>
+            <a href={`${base}inspirations`} class={currentPage === 'inspirations' ? 'current' : ''}>Inspirations</a>
+        </div>
     </nav>
 
     <main>
-      <slot />
+        <slot />
     </main>
-  </body>
+</body>
 </html>

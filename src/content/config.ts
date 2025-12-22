@@ -1,50 +1,64 @@
-import { defineCollection, z } from "astro:content";
+import { defineCollection, z } from 'astro:content';
 
-const essays = defineCollection({
-  type: "content",
-  schema: z.object({
-    title: z.string(),
-    date: z.string(),
-    type: z.string(),
-    themes: z.array(z.string()),
-    era: z.string().nullable(),
-    status: z.string(),
-    summary: z.string(),
-  }),
+const essaysCollection = defineCollection({
+    type: 'content',
+    schema: z.object({
+        title: z.string(),
+        date: z.date(),
+        type: z.enum(['essay', 'case', 'reflection', 'blog']),
+        themes: z.array(z.string()),
+        era: z.string().nullable(),
+        status: z.enum(['draft', 'published', 'canonical']),
+        summary: z.string(),
+        related: z.array(z.string()).optional(),
+    }),
 });
 
-const cases = defineCollection({
-  type: "content",
-  schema: z.object({
-    title: z.string(),
-    date: z.string(),
-    themes: z.array(z.string()),
-    status: z.string(),
-    summary: z.string(),
-  }),
+const casesCollection = defineCollection({
+    type: 'content',
+    schema: z.object({
+        title: z.string(),
+        date: z.date(),
+        type: z.enum(['essay', 'case', 'reflection', 'blog']),
+        themes: z.array(z.string()),
+        era: z.string().nullable(),
+        status: z.enum(['draft', 'published', 'canonical']),
+        summary: z.string(),
+        related: z.array(z.string()).optional(),
+    }),
 });
 
-const reflections = defineCollection({
-  type: "content",
-  schema: z.object({
-    title: z.string(),
-    date: z.string(),
-    summary: z.string(),
-  }),
+const reflectionsCollection = defineCollection({
+    type: 'content',
+    schema: z.object({
+        title: z.string(),
+        date: z.date(),
+        type: z.enum(['essay', 'case', 'reflection', 'blog']),
+        themes: z.array(z.string()),
+        era: z.string().nullable(),
+        status: z.enum(['draft', 'published', 'canonical']),
+        summary: z.string(),
+        related: z.array(z.string()).optional(),
+    }),
 });
 
-const blog = defineCollection({
-  type: "content",
-  schema: z.object({
-    title: z.string(),
-    date: z.string(),
-    summary: z.string(),
-  }),
+const blogCollection = defineCollection({
+    type: 'content',
+    schema: z.object({
+        title: z.string(),
+        date: z.date(),
+        type: z.enum(['essay', 'case', 'reflection', 'blog']),
+        themes: z.array(z.string()),
+        era: z.string().nullable(),
+        status: z.enum(['draft', 'published', 'canonical']),
+        summary: z.string(),
+        related: z.array(z.string()).optional(),
+    }),
 });
 
 export const collections = {
-  essays,
-  cases,
-  reflections,
-  blog,
+    'essays': essaysCollection,
+    'cases': casesCollection,
+    'reflections': reflectionsCollection,
+    'blog': blogCollection,
 };

@@ -1,0 +1,531 @@
+/* ============================================
+   GLOBAL DESIGN SYSTEM
+   Personal Website - Phase 1
+   Following UX Design Specification
+   ============================================ */
+
+/* ============================================
+   CSS CUSTOM PROPERTIES (Design Tokens)
+   ============================================ */
+
+:root {
+    /* Color Palette - Earth-toned neutrals with sustainable green */
+    --color-background: #FAFAF8;        /* Warm off-white */
+    --color-text-primary: #1A1A1A;      /* Near-black */
+    --color-text-muted: #666666;        /* Metadata, captions */
+    --color-border: #E5E5E5;            /* Subtle dividers */
+    --color-accent: #2D5F3F;            /* Sustainable green - links, current nav */
+    
+    /* Typography */
+    --font-serif: Georgia, 'Charter', 'Iowan Old Style', 'Times New Roman', serif;
+    --font-sans: -apple-system, BlinkMacSystemFont, 'Inter', 'SF Pro Display', 'Segoe UI', sans-serif;
+    --font-mono: 'Fira Code', 'JetBrains Mono', 'Consolas', monospace;
+    
+    /* Type Scale */
+    --size-h1: 36px;
+    --size-h2: 28px;
+    --size-h3: 22px;
+    --size-body: 19px;
+    --size-metadata: 15px;
+    --size-small: 14px;
+    
+    /* Line Heights */
+    --line-height-tight: 1.3;
+    --line-height-normal: 1.4;
+    --line-height-comfortable: 1.5;
+    --line-height-reading: 1.75;
+    
+    /* Spacing System - 8px base unit */
+    --space-xs: 16px;   /* 2 units */
+    --space-sm: 24px;   /* 3 units */
+    --space-md: 32px;   /* 4 units */
+    --space-lg: 64px;   /* 8 units */
+    --space-xl: 96px;   /* 12 units */
+    
+    /* Layout - Optimized for modern laptops with generous margins */
+    --content-width-reading: 750px;   /* Essays, long-form (60-75 chars) */
+    --content-width-standard: 900px;  /* Home, landing pages */
+    --container-max: 1200px;          /* Overall page constraint */
+    --container-padding-mobile: 40px;
+    --container-padding-desktop: 40px;  /* Reduced for better image fit */
+}
+
+/* ============================================
+   GLOBAL RESETS
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font-serif);
+    font-size: var(--size-body);
+    line-height: var(--line-height-reading);
+    color: var(--color-text-primary);
+    background-color: var(--color-background);
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    margin-bottom: var(--space-sm);
+}
+
+h1 {
+    font-size: var(--size-h1);
+    line-height: var(--line-height-tight);
+    margin-bottom: var(--space-xs);  /* Tighter - more content above fold */
+}
+
+h2 {
+    font-size: var(--size-h2);
+    line-height: var(--line-height-normal);
+}
+
+h3 {
+    font-size: var(--size-h3);
+    line-height: var(--line-height-comfortable);
+}
+
+p {
+    margin-bottom: 20px;  /* Tighter spacing to fit image above fold */
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-decoration-color: rgba(45, 95, 63, 0.3);
+    text-underline-offset: 3px;
+    transition: all 0.15s ease;
+}
+
+a:hover {
+    text-decoration-color: var(--color-accent);
+}
+
+strong {
+    font-weight: 600;
+}
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+
+.site-nav {
+    background-color: var(--color-background);
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-sm) 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 var(--container-padding-mobile);
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+}
+
+.nav-container a {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--color-text-primary);
+    padding: 8px 0;
+    text-decoration: none;
+}
+
+.nav-container a:hover {
+    color: var(--color-accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-accent);
+}
+
+.nav-container a.current {
+    color: var(--color-accent);
+    border-bottom: 2px solid var(--color-accent);
+    font-weight: 600;
+}
+
+.nav-divider {
+    color: var(--color-border);
+    user-select: none;
+}
+
+/* ============================================
+   LAYOUT CONTAINERS
+   ============================================ */
+
+.page-container {
+    max-width: var(--content-width-standard);  /* 900px for standard pages */
+    margin: 0 auto;
+    padding: var(--space-lg) var(--container-padding-mobile) var(--space-lg);
+    padding-top: 24px;  /* Minimal top - image must be above fold */
+}
+
+.page-container-reading {
+    max-width: var(--content-width-reading);  /* 750px for essays/long-form */
+    margin: 0 auto;
+    padding: var(--space-lg) var(--container-padding-mobile);
+}
+
+.wide-container {
+    max-width: var(--container-max);  /* 1200px max */
+    margin: 0 auto;
+    padding: var(--space-lg) var(--container-padding-mobile);
+}
+
+/* ============================================
+   METADATA DISPLAY
+   ============================================ */
+
+.metadata {
+    font-family: var(--font-sans);
+    font-size: var(--size-metadata);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-md);
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    font-style: italic;  /* Softer, more personal */
+}
+
+.metadata-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.metadata-label {
+    font-weight: 500;
+    font-style: normal;  /* Labels stay upright */
+}
+
+.metadata-themes {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.metadata-theme {
+    background-color: rgba(45, 95, 63, 0.08);
+    color: var(--color-accent);
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 13px;
+}
+
+/* ============================================
+   SECTION INTRO TEXT
+   ============================================ */
+
+.section-intro {
+    font-size: 20px;
+    line-height: 1.6;
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-lg);
+    max-width: 600px;
+}
+
+/* ============================================
+   CONTENT LISTS (Section Landing Pages)
+   ============================================ */
+
+.content-list {
+    list-style: none;
+}
+
+.content-item {
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-lg);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.content-item:last-child {
+    border-bottom: none;
+}
+
+.content-item-title {
+    font-size: var(--size-h2);
+    margin-bottom: var(--space-xs);
+}
+
+.content-item-title a {
+    color: var(--color-text-primary);
+}
+
+.content-item-title a:hover {
+    color: var(--color-accent);
+}
+
+.content-item-summary {
+    color: var(--color-text-primary);
+    margin-top: var(--space-xs);
+}
+
+/* ============================================
+   LONG-FORM READING
+   ============================================ */
+
+.reading-header {
+    margin-bottom: var(--space-lg);
+}
+
+.reading-title {
+    margin-bottom: var(--space-sm);
+}
+
+.reading-content {
+    margin-top: var(--space-lg);
+}
+
+/* Drop cap for first paragraph */
+.reading-content > p:first-of-type::first-letter {
+    font-size: 3.2em;
+    line-height: 0.9;
+    float: left;
+    margin: 0.05em 0.1em 0 0;
+    font-weight: 600;
+    color: var(--color-accent);
+}
+
+/* Pull quotes */
+.pullquote {
+    margin: var(--space-lg) 0;
+    padding-left: var(--space-md);
+    border-left: 3px solid var(--color-accent);
+    color: var(--color-accent);
+    font-size: 22px;
+    line-height: 1.5;
+    font-style: italic;
+}
+
+/* Quote/Reflection text - for philosophical lines, memories, wisdom */
+.reflection-quote {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 21px;
+    line-height: 1.6;
+    color: var(--color-accent);
+    margin: var(--space-lg) 0;
+    padding: var(--space-sm) 0;
+}
+
+/* Light narrative pull-quote */
+.narrative-quote {
+    margin: var(--space-md) 0;
+    padding-left: var(--space-md);
+    border-left: 3px solid rgba(45, 95, 63, 0.25);
+    font-style: italic;
+    color: var(--color-text-primary);
+    font-size: 20px;
+    line-height: 1.55;
+}
+
+/* ============================================
+   BLOG POST STYLING (Lighter Treatment)
+   ============================================ */
+
+.blog-header {
+    margin-bottom: var(--space-md);
+}
+
+.blog-title {
+    font-size: var(--size-h2);
+    margin-bottom: var(--space-xs);
+}
+
+.blog-date {
+    font-family: var(--font-sans);
+    font-size: var(--size-metadata);
+    color: var(--color-text-muted);
+    font-weight: 600;
+    margin-bottom: var(--space-sm);
+}
+
+.blog-content {
+    margin-top: var(--space-md);
+}
+
+/* ============================================
+   HOME PAGE SPECIFIC
+   ============================================ */
+
+.home-opening {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: var(--space-lg);
+    padding: var(--space-md);
+    background-color: rgba(45, 95, 63, 0.06);
+    border-left: 4px solid var(--color-accent);
+    font-style: italic;
+    color: var(--color-text-primary);
+}
+
+.home-section {
+    margin-bottom: var(--space-lg);
+}
+
+.home-section h2 {
+    margin-bottom: var(--space-sm);
+}
+
+.home-section p {
+    margin-bottom: var(--space-sm);
+}
+
+/* Spacing between intro text and lists */
+.home-section p + ul {
+    margin-top: var(--space-xs);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (min-width: 768px) {
+    .nav-container {
+        padding: 0 var(--container-padding-desktop);
+    }
+    
+    .page-container,
+    .wide-container {
+        padding-left: var(--container-padding-desktop);
+        padding-right: var(--container-padding-desktop);
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --size-h1: 32px;
+        --size-h2: 24px;
+        --size-h3: 20px;
+        --size-body: 18px;
+    }
+    
+    .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-xs);
+    }
+    
+    .nav-divider {
+        display: none;
+    }
+}
+
+/* ============================================
+   CULTURAL & NARRATIVE ELEMENTS
+   ============================================ */
+
+/* Sanskrit or cultural text lines - callout treatment */
+.sanskrit-line,
+.cultural-text {
+    font-family: var(--font-serif);
+    font-size: 19px;
+    line-height: 1.6;
+    color: var(--color-accent);
+    font-style: italic;
+    margin: var(--space-md) 0;  /* Tighter spacing - keeps section cohesive */
+    padding: var(--space-md);
+    background-color: rgba(45, 95, 63, 0.06);
+    border-left: 4px solid var(--color-accent);
+}
+
+/* Narrative spacing - more breathing room for memoir/reflective content */
+.narrative-spacing p {
+    margin-bottom: var(--space-md);
+}
+
+.narrative-spacing p + p {
+    margin-top: var(--space-sm);
+}
+
+/* Optional image styling for personal artifacts */
+.personal-image {
+    max-width: 100%;
+    height: auto;
+    filter: grayscale(100%);
+    opacity: 0.85;
+    margin: var(--space-lg) 0;
+    border: 1px solid var(--color-border);
+}
+
+.personal-image-caption {
+    font-family: var(--font-sans);
+    font-size: var(--size-small);
+    color: var(--color-text-muted);
+    font-style: italic;
+    margin-top: var(--space-xs);
+    text-align: center;
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+.text-muted {
+    color: var(--color-text-muted);
+}
+
+.text-small {
+    font-size: var(--size-small);
+}
+
+.mb-lg {
+    margin-bottom: var(--space-lg);
+}
+
+.mb-xl {
+    margin-bottom: var(--space-xl);
+}
+
+/* ============================================
+   HOMEPAGE VISUAL ELEMENTS
+   ============================================ */
+
+/* Sadhya image presentation */
+.sadhya-image {
+    max-width: 85%;
+    height: auto;
+    margin: var(--space-lg) auto;
+    display: block;
+    opacity: 0.9;
+    border: 1px solid var(--color-border);
+}
+
+/* Make UL lists breathe inside homepage areas */
+.home-section ul {
+    margin-bottom: var(--space-md);
+    padding-left: var(--space-md);
+    line-height: 1.6;
+}
+
+.translation {
+    font-size: var(--size-small);
+    color: var(--color-text-muted);
+    font-style: italic;
+    margin-top: var(--space-xs);  /* Tight spacing - translation belongs with Sanskrit */
+}

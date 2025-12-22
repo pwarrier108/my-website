@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+    const essays = await getCollection('essays');
+    return essays.map(entry => ({
+        params: { slug: entry.slug },
+        props: { entry }
+    }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<BaseLayout title={`${entry.data.title} - Padmanand Warrier`} currentPage="ideas">
+    <div class="page-container-reading">
+        
+        <article>
+            <header class="reading-header">
+                <h1 class="reading-title">{entry.data.title}</h1>
+                
+                <div class="metadata">
+                    <div class="metadata-item">
+                        <span class="metadata-label">Published</span> {new Date(entry.data.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long' })}
+                    </div>
+                    {entry.data.era && (
+                        <div class="metadata-item">
+                            <span class="metadata-label">Era:</span> {entry.data.era}
+                        </div>
+                    )}
+                    {entry.data.themes && entry.data.themes.length > 0 && (
+                        <div class="metadata-item">
+                            <span class="metadata-label">Themes:</span>
+                            <div class="metadata-themes">
+                                {entry.data.themes.map((theme) => (
+                                    <span class="metadata-theme">{theme}</span>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+                </div>
+            </header>
+            
+            <div class="reading-content">
+                <Content />
+            </div>
+        </article>
+
+    </div>
+</BaseLayout>
