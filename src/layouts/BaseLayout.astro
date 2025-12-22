@@ -8,6 +8,15 @@ interface Props {
 
 const { title, currentPage = '' } = Astro.props;
 const base = import.meta.env.BASE_URL;
+
+// Helper function to construct paths correctly for both root and subdirectory deploys
+const getPath = (path) => {
+  const normalizedPath = path.startsWith('/') ? path : `/${path}`;
+  // If base is root '/', just return the path
+  if (base === '/') return normalizedPath;
+  // Otherwise, concatenate base + path
+  return `${base}${normalizedPath}`;
+};
 ---
 
 <!DOCTYPE html>
@@ -21,15 +30,15 @@ const base = import.meta.env.BASE_URL;
 <body>
     <nav class="site-nav">
         <div class="nav-container">
-            <a href={base} class={currentPage === 'home' ? 'current' : ''}>Home</a>
+            <a href={getPath('/')} class={currentPage === 'home' ? 'current' : ''}>Home</a>
             <span class="nav-divider">|</span>
-            <a href={`${base}/seva`} class={currentPage === 'seva' ? 'current' : ''}>Seva</a>
+            <a href={getPath('/seva')} class={currentPage === 'seva' ? 'current' : ''}>Seva</a>
             <span class="nav-divider">|</span>
-            <a href={`${base}/work`} class={currentPage === 'work' ? 'current' : ''}>Work</a>
+            <a href={getPath('/work')} class={currentPage === 'work' ? 'current' : ''}>Work</a>
             <span class="nav-divider">|</span>
-            <a href={`${base}/ideas`} class={currentPage === 'ideas' ? 'current' : ''}>Ideas</a>
+            <a href={getPath('/ideas')} class={currentPage === 'ideas' ? 'current' : ''}>Ideas</a>
             <span class="nav-divider">|</span>
-            <a href={`${base}/inspirations`} class={currentPage === 'inspirations' ? 'current' : ''}>Inspirations</a>
+            <a href={getPath('/inspirations')} class={currentPage === 'inspirations' ? 'current' : ''}>Inspirations</a>
         </div>
     </nav>
 
