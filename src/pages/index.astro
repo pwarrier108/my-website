@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout title="Padmanand Warrier" currentPage="home">
@@ -20,7 +21,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
              Sadhya Image
         ========================== -->
         <img 
-            src="/images/sadhya-homepage.jpg" 
+            src={`${base}/images/sadhya-homepage.jpg`}
             alt="Abstract Sadhya metaphor visual representing multiple dimensions of life"
             class="sadhya-image"
         />
