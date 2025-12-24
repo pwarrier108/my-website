@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const base = import.meta.env.BASE_URL;
+
+// Helper function to construct paths
+const getPath = (path) => {
+  const normalizedPath = path.startsWith('/') ? path : `/${path}`;
+  if (base === '/') return normalizedPath;
+  return `${base}${normalizedPath}`;
+};
+---
+
+<BaseLayout title="Inspirations - Padmanand Warrier" currentPage="inspirations">
+    <div class="page-container">
+        
+        <h1>Inspirations — People, Places & Possibilities</h1>
+        
+        <p class="section-intro">
+            No life is built alone. The ideas and systems I work on are shaped by the people who raised me, the cultures I have lived within, and the thinkers and creators who continue to challenge and expand my view of what is possible.
+        </p>
+
+        <!-- Spiritual Guidance -->
+        <section class="home-section mb-xl">
+            <h2>SPIRITUAL GUIDANCE</h2>
+            
+            <p>
+                My parents led me to spiritual inquiry, including a close association with Sri Sathya Sai Baba. Since early childhood, His teachings continue to shape how I think about purpose, leadership, and the role of technology in serving people with compassion and dignity.
+            </p>
+            
+            <p>
+                <a href={getPath('/inspirations/spiritual')}>Explore Spiritual Guidance →</a>
+            </p>
+        </section>
+
+        <!-- Family & Roots -->
+        <section class="home-section mb-xl">
+            <h2>FAMILY & ROOTS</h2>
+            
+            <p>
+                My parents shaped my worldview long before technology did—kindness as strength, discipline without hardness, humor in difficulty, and the belief that learning never ends. Much of what I attempt now is, in some way, homage to them.
+            </p>
+            
+            <p>
+                <a href={getPath('/inspirations/family')}>Explore Family & Roots →</a>
+            </p>
+        </section>
+
+        <!-- Influential People -->
+        <section class="home-section mb-xl">
+            <h2>INFLUENTIAL PEOPLE</h2>
+            
+            <p>
+                World leaders who navigated uncertainty with clarity, technology pioneers who imagined possibilities before the tools existed, and mentors who expanded my understanding of what it means to build systems that serve.
+            </p>
+            
+            <p>
+                <a href={getPath('/inspirations/people')}>Explore Influential People →</a>
+            </p>
+        </section>
+
+        <!-- Books, Poetry & Films -->
+        <section class="home-section mb-xl">
+            <h2>BOOKS, POETRY & FILMS</h2>
+            
+            <p>
+                Works that continue to inspire, provoke, and comfort. Some are foundational classics; others are unexpected discoveries that have changed my thinking in small but profound ways.
+            </p>
+            
+            <p>
+                <a href={getPath('/inspirations/works')}>Explore Books, Poetry & Films →</a>
+            </p>
+        </section>
+
+        <!-- Travel & Culture -->
+        <section class="home-section">
+            <h2>TRAVEL & CULTURE</h2>
+            
+            <p>
+                From Australia to Zambia, and many places in between, landscapes, food, conversations, and cultural traditions have widened my sense of belonging. I find wisdom in discussions shared over chai as much as in research labs or boardrooms.
+            </p>
+            
+            <p>
+                <a href={getPath('/inspirations/places')}>Explore Travel & Culture →</a>
+            </p>
+        </section>
+
+    </div>
+</BaseLayout>

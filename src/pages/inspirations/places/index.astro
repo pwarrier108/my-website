@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const base = import.meta.env.BASE_URL;
+
+// Helper function to construct paths
+const getPath = (path) => {
+  const normalizedPath = path.startsWith('/') ? path : `/${path}`;
+  if (base === '/') return normalizedPath;
+  return `${base}${normalizedPath}`;
+};
+
+// Get places content
+const placesContent = await getCollection('inspirations', ({ data }) => {
+    return data.category === 'places' && (data.status === 'published' || data.status === 'canonical');
+});
+
+// Sort by date, most recent first
+const sortedContent = placesContent.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+// Format date
+const formatDate = (date) => {
+    return new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' }).format(date);
+};
+---
+
+<BaseLayout title="Travel & Culture - Padmanand Warrier" currentPage="inspirations">
+    <div class="page-container">
+        
+        <h1>Travel & Culture</h1>
+        
+        <p class="section-intro">
+            From Australia to Zambia, and many places in between, landscapes, food, conversations, and cultural traditions have widened my sense of belonging. Travel has been its own university—teaching through experience, expanding through encounter.
+        </p>
+
+        {sortedContent.length > 0 ? (
+            <ul class="content-list">
+                {sortedContent.map((item) => (
+                    <li class="content-item">
+                        <h3 class="content-item-title">
+                            <a href={getPath(`/inspirations/places/${item.slug}`)}>{item.data.title}</a>
+                        </h3>
+                        <div class="metadata">
+                            <span class="metadata-item">
+                                <span class="metadata-label">{item.data.type.charAt(0).toUpperCase() + item.data.type.slice(1)}</span>
+                            </span>
+                            <span class="metadata-item">Published {formatDate(item.data.date)}</span>
+                            {item.data.themes && item.data.themes.length > 0 && (
+                                <span class="metadata-item">
+                                    Themes: {item.data.themes.join(', ')}
+                                </span>
+                            )}
+                        </div>
+                        <p class="content-item-summary">{item.data.summary}</p>
+                    </li>
+                ))}
+            </ul>
+        ) : (
+            <p>Content coming soon.</p>
+        )}
+
+    </div>
+</BaseLayout>

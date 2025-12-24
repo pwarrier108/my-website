@@ -36,9 +36,35 @@ const getPath = (path) => {
             <span class="nav-divider">|</span>
             <a href={getPath('/work')} class={currentPage === 'work' ? 'current' : ''}>Work</a>
             <span class="nav-divider">|</span>
-            <a href={getPath('/ideas')} class={currentPage === 'ideas' ? 'current' : ''}>Ideas</a>
+            
+            <!-- Ideas with dropdown -->
+            <div class="nav-dropdown">
+                <a href={getPath('/ideas')} class={currentPage === 'ideas' ? 'current' : ''}>
+                    Ideas
+                </a>
+                <div class="dropdown-content">
+                    <a href={getPath('/ideas/technology')}>Technology & Systems</a>
+                    <a href={getPath('/ideas/leadership')}>Leadership & Product</a>
+                    <a href={getPath('/ideas/memoirs')}>Memoirs & Culture</a>
+                    <a href={getPath('/ideas/philosophy')}>Philosophy & Learning</a>
+                </div>
+            </div>
+            
             <span class="nav-divider">|</span>
-            <a href={getPath('/inspirations')} class={currentPage === 'inspirations' ? 'current' : ''}>Inspirations</a>
+            
+            <!-- Inspirations with dropdown -->
+            <div class="nav-dropdown">
+                <a href={getPath('/inspirations')} class={currentPage === 'inspirations' ? 'current' : ''}>
+                    Inspirations
+                </a>
+                <div class="dropdown-content">
+                    <a href={getPath('/inspirations/spiritual')}>Spiritual Guidance</a>
+                    <a href={getPath('/inspirations/family')}>Family & Roots</a>
+                    <a href={getPath('/inspirations/people')}>Influential People</a>
+                    <a href={getPath('/inspirations/works')}>Books, Poetry & Films</a>
+                    <a href={getPath('/inspirations/places')}>Travel & Culture</a>
+                </div>
+            </div>
         </div>
     </nav>
 

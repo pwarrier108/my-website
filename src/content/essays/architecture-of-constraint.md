@@ -2,6 +2,7 @@
 title: "The Architecture of Constraint: Building Systems That Scale Without Breaking"
 date: 2018-04-15
 type: essay
+category: technology
 themes: ["Systems Thinking", "Architecture", "Scale"]
 era: "Digital Analytics (2010s)"
 status: published

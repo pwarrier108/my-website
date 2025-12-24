@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const base = import.meta.env.BASE_URL;
+
+// Helper function to construct paths
+const getPath = (path) => {
+  const normalizedPath = path.startsWith('/') ? path : `/${path}`;
+  if (base === '/') return normalizedPath;
+  return `${base}${normalizedPath}`;
+};
+---
+
+<BaseLayout title="Ideas - Padmanand Warrier" currentPage="ideas">
+    <div class="page-container">
+        
+        <h1>Ideas — Inner and Outer Inquiry</h1>
+        
+        <p class="section-intro">
+            Writing here moves between technology and culture, systems and stories, ancient knowledge structures and modern AI. Some writings look outward at patterns across eras. Others look inward at leadership, learning, and memory. Not everything here is definitive—some pieces are meant to endure, others are thinking aloud.
+        </p>
+
+        <!-- Technology & Systems -->
+        <section class="home-section mb-xl">
+            <h2>TECHNOLOGY & SYSTEMS</h2>
+            
+            <p>
+                Essays on AI, engineering history, platforms, regenerative design, and the patterns that repeat across technological eras. How systems evolve, what fundamentals endure, and where innovation comes from constraint.
+            </p>
+            
+            <p>
+                <a href={getPath('/ideas/technology')}>Explore Technology & Systems →</a>
+            </p>
+        </section>
+
+        <!-- Leadership & Product -->
+        <section class="home-section mb-xl">
+            <h2>LEADERSHIP & PRODUCT</h2>
+            
+            <p>
+                Decision-making under uncertainty, communication frameworks, product wisdom forged through real tradeoffs. What it means to build at scale without losing sight of people, and how judgment develops through practice.
+            </p>
+            
+            <p>
+                <a href={getPath('/ideas/leadership')}>Explore Leadership & Product →</a>
+            </p>
+        </section>
+
+        <!-- Memoirs & Culture -->
+        <section class="home-section mb-xl">
+            <h2>MEMOIRS & CULTURE</h2>
+            
+            <p>
+                Stories from KREC campus life, travel memories, food and belonging, the humor in chaos, and the cultural textures that shape who we become. Narratives that connect personal history to larger patterns of meaning.
+            </p>
+            
+            <p>
+                <a href={getPath('/ideas/memoirs')}>Explore Memoirs & Culture →</a>
+            </p>
+        </section>
+
+        <!-- Philosophy & Learning -->
+        <section class="home-section">
+            <h2>PHILOSOPHY & LEARNING</h2>
+            
+            <p>
+                Reflections on spirituality, knowledge transfer, ancient wisdom structures, and the practice of continuous learning. How inner inquiry shapes outer work, and what endures when tools and eras change.
+            </p>
+            
+            <p>
+                <a href={getPath('/ideas/philosophy')}>Explore Philosophy & Learning →</a>
+            </p>
+        </section>
+
+    </div>
+</BaseLayout>

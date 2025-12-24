@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+    const worksContent = await getCollection('inspirations', ({ data }) => data.category === 'works');
+    
+    return worksContent.map(entry => ({
+        params: { slug: entry.slug },
+        props: { entry }
+    }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+// Format date
+const formatDate = (date) => {
+    return new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' }).format(date);
+};
+---
+
+<BaseLayout title={`${entry.data.title} - Padmanand Warrier`} currentPage="inspirations">
+    <div class="page-container-reading">
+        
+        <article class="reading-header">
+            <h1 class="reading-title">{entry.data.title}</h1>
+            
+            <div class="metadata">
+                <span class="metadata-item">
+                    <span class="metadata-label">{entry.data.type.charAt(0).toUpperCase() + entry.data.type.slice(1)}</span>
+                </span>
+                <span class="metadata-item">Published {formatDate(entry.data.date)}</span>
+                {entry.data.themes && entry.data.themes.length > 0 && (
+                    <span class="metadata-item">
+                        Themes: {entry.data.themes.join(', ')}
+                    </span>
+                )}
+            </div>
+        </article>
+
+        <div class="reading-content">
+            <Content />
+        </div>
+
+    </div>
+</BaseLayout>
