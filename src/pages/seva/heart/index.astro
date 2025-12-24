@@ -1,0 +1,218 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const base = import.meta.env.BASE_URL;
+
+// Helper function to construct paths correctly for both root and subdirectory deploys
+const getPath = (path) => {
+  const normalizedPath = path.startsWith('/') ? path : `/${path}`;
+  // If base is root '/', just return the path
+  if (base === '/') return normalizedPath;
+  // Otherwise, concatenate base + path
+  return `${base}${normalizedPath}`;
+};
+
+// Get all seva content with category 'heart'
+const heartContent = await getCollection('seva', ({ data }) => {
+  return data.category === 'heart' && data.status === 'published';
+});
+
+// Sort by date (newest first)
+const sortedContent = heartContent.sort((a, b) => 
+  new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
+---
+
+<BaseLayout title="Warrier H.E.A.R.T. | Padmanand Warrier">
+  <main class="content-container">
+    <header class="section-header">
+      <h1>The Warrier H.E.A.R.T. Framework</h1>
+    </header>
+
+    <div class="section-intro">
+      <div class="heart-logo">
+        <img src={getPath('/images/warrier-heart-logo.png')} alt="Warrier H.E.A.R.T. Framework" />
+      </div>
+      
+      <p>
+        The Warrier H.E.A.R.T. framework—Human-centric design, Entrepreneurial spirit, Asset development, Regenerative practices, and Technology-enabled connections—took shape over time through observing how technology initiatives succeed or falter depending on what they emphasize. At the 2018 SXSW Cities Summit, where discussions were largely oriented around autonomous vehicles and smart sensors, the human dimension of urban systems appeared less prominently in the conversation. That contrast helped sharpen a question I had been examining: what might change if technology were designed with human flourishing as an explicit objective, rather than as an implicit outcome?
+      </p>
+      
+      <p>
+        The framework reflects an effort to work through that question—a lens for orienting innovation toward enduring human value. It draws on decades of building systems under real constraints, observing both the benefits and the second-order effects of technology-led transformation, and recognizing that how we build shapes outcomes as much as what we build.
+      </p>
+      
+      <p>
+        At NITK, the Warrier H.E.A.R.T. Hub applies these principles through institutional service and campus-based innovation. Established in 2024, the Hub provides a platform for students, researchers, and industry partners to develop solutions addressing urgent challenges—for the campus and for the planet. The campus becomes a living laboratory where sustainable AI and regenerative practices create local impact with global relevance.
+      </p>
+      
+      <p>
+        <em>Read the <a href={getPath('/ideas/philosophy')}>complete framework essay</a> for the full origin story and principles.</em>
+      </p>
+    </div>
+
+    <section class="content-list">
+      {sortedContent.length === 0 ? (
+        <p class="no-content">Content coming soon.</p>
+      ) : (
+        <ul>
+          {sortedContent.map((item) => (
+            <li class="content-item">
+              <h3>
+                <a href={getPath(`/seva/${item.slug}`)}>{item.data.title}</a>
+              </h3>
+              
+              <div class="metadata">
+                <span class="date">
+                  {new Date(item.data.date).toLocaleDateString('en-US', { 
+                    year: 'numeric', 
+                    month: 'long' 
+                  })}
+                </span>
+                {item.data.type && (
+                  <>
+                    <span class="separator">·</span>
+                    <span class="type">{item.data.type}</span>
+                  </>
+                )}
+                {item.data.era && (
+                  <>
+                    <span class="separator">·</span>
+                    <span class="era">Era: {item.data.era}</span>
+                  </>
+                )}
+              </div>
+              
+              {item.data.summary && (
+                <p class="summary">{item.data.summary}</p>
+              )}
+            </li>
+          ))}
+        </ul>
+      )}
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .content-container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+
+  .section-header {
+    margin-bottom: 32px;
+  }
+
+  .section-header h1 {
+    font-size: 36px;
+    line-height: 1.3;
+    margin-bottom: 0;
+  }
+
+  .heart-logo {
+    float: right;
+    margin: 0 0 24px 32px;
+    max-width: 250px;
+  }
+
+  .heart-logo img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .section-intro {
+    border-top: 1px solid #E5E5E5;
+    border-bottom: 1px solid #E5E5E5;
+    padding: 32px 0;
+    margin-bottom: 64px;
+  }
+
+  .section-intro::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .section-intro p {
+    margin-bottom: 24px;
+    line-height: 1.7;
+  }
+
+  .section-intro p:last-child {
+    margin-bottom: 0;
+  }
+
+  .section-intro a {
+    color: #2D5F3F;
+    text-decoration: none;
+  }
+
+  .section-intro a:hover {
+    text-decoration: underline;
+  }
+
+  .content-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .content-item {
+    margin-bottom: 64px;
+  }
+
+  .content-item h3 {
+    font-size: 22px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+
+  .content-item h3 a {
+    color: #2D5F3F;
+    text-decoration: none;
+  }
+
+  .content-item h3 a:hover {
+    text-decoration: underline;
+  }
+
+  .metadata {
+    font-size: 14px;
+    color: #666666;
+    margin-bottom: 16px;
+  }
+
+  .metadata .separator {
+    margin: 0 8px;
+  }
+
+  .summary {
+    line-height: 1.7;
+    color: #1A1A1A;
+  }
+
+  .no-content {
+    color: #666666;
+    font-style: italic;
+  }
+
+  @media (max-width: 768px) {
+    .content-container {
+      padding: 20px 16px;
+    }
+
+    .section-header h1 {
+      font-size: 28px;
+    }
+
+    .heart-logo {
+      float: none;
+      margin: 0 auto 24px auto;
+      max-width: 200px;
+    }
+  }
+</style>

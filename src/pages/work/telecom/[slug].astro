@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const workContent = await getCollection('work', ({ data }) => 
+    data.category === 'telecom'
+  );
+  return workContent.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry }
+  }));
+}
+
+interface Props {
+  entry: CollectionEntry<'work'>;
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<BaseLayout title={entry.data.title} currentPage="work">
+    <article class="content-page">
+        <header>
+            <h1>{entry.data.title}</h1>
+            <div class="metadata">
+                <span>Published {entry.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long' })}</span>
+                {entry.data.era && <span>· Era: {entry.data.era}</span>}
+                {entry.data.themes && entry.data.themes.length > 0 && (
+                    <span>· Themes: {entry.data.themes.join(', ')}</span>
+                )}
+            </div>
+        </header>
+        
+        <Content />
+    </article>
+</BaseLayout>

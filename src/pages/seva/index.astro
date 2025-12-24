@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+
+// Helper function to construct paths correctly
+const getPath = (path) => {
+  const normalizedPath = path.startsWith('/') ? path : `/${path}`;
+  if (base === '/') return normalizedPath;
+  return `${base}${normalizedPath}`;
+};
+---
+
+<BaseLayout title="Seva — Service to Man Is Service to God" currentPage="seva">
+    <div class="page-container">
+        <h1>Seva — Service to Man Is Service to God</h1>
+        
+        <p>
+            Technology careers create capability. How we deploy that capability afterward defines legacy. 
+            This section documents service initiatives, innovation frameworks, and efforts to help the 
+            next generation build better systems.
+        </p>
+
+        <section class="content-categories">
+            <div class="category-card">
+                <h2><a href={getPath('/seva/sai-seva')}>Sathya Sai Seva Projects</a></h2>
+                <p>
+                    Service work inspired by the teachings of Sri Sathya Sai Baba: "Love All, Serve All" 
+                    and "Help Ever, Hurt Never." Community service projects, compassionate action, and 
+                    service as spiritual practice.
+                </p>
+            </div>
+
+            <div class="category-card">
+                <h2><a href={getPath('/seva/heart')}>Warrier H.E.A.R.T.</a></h2>
+                <p>
+                    Framework for Holistic, Ethical, Adaptive, Regenerative Technology. Sustainable AI, 
+                    climate-resilient innovation, and technology aligned with human and environmental well-being.
+                </p>
+            </div>
+
+            <div class="category-card">
+                <h2><a href={getPath('/seva/mentorship')}>Mentorship</a></h2>
+                <p>
+                    NITK alumni networks, student mentorship programs, entrepreneurial ecosystems, 
+                    and pathways for young engineers to learn, lead, and serve with integrity. 
+                    Mentorship that scales beyond individuals to build lasting capability.
+                </p>
+            </div>
+        </section>
+    </div>
+</BaseLayout>

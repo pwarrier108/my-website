@@ -32,9 +32,33 @@ const getPath = (path) => {
         <div class="nav-container">
             <a href={getPath('/')} class={currentPage === 'home' ? 'current' : ''}>Home</a>
             <span class="nav-divider">|</span>
-            <a href={getPath('/seva')} class={currentPage === 'seva' ? 'current' : ''}>Seva</a>
+            
+            <!-- Seva with dropdown -->
+            <div class="nav-dropdown">
+                <a href={getPath('/seva')} class={currentPage === 'seva' ? 'current' : ''}>
+                    Seva
+                </a>
+                <div class="dropdown-content">
+                    <a href={getPath('/seva/sai-seva')}>Sathya Sai Seva Projects</a>
+                    <a href={getPath('/seva/heart')}>Warrier H.E.A.R.T.</a>
+                    <a href={getPath('/seva/mentorship')}>Mentorship</a>
+                </div>
+            </div>
+            
             <span class="nav-divider">|</span>
-            <a href={getPath('/work')} class={currentPage === 'work' ? 'current' : ''}>Work</a>
+            
+            <!-- Work with dropdown -->
+            <div class="nav-dropdown">
+                <a href={getPath('/work')} class={currentPage === 'work' ? 'current' : ''}>
+                    Work
+                </a>
+                <div class="dropdown-content">
+                    <a href={getPath('/work/telecom')}>Telecommunications Era (1980s-90s)</a>
+                    <a href={getPath('/work/enterprise')}>Enterprise & Cloud Era (2000s-2010s)</a>
+                    <a href={getPath('/work/sustainable-ai')}>Sustainable AI Era (2020s)</a>
+                </div>
+            </div>
+            
             <span class="nav-divider">|</span>
             
             <!-- Ideas with dropdown -->

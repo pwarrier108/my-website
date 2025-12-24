@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+
+// Helper function to construct paths correctly
+const getPath = (path) => {
+  const normalizedPath = path.startsWith('/') ? path : `/${path}`;
+  if (base === '/') return normalizedPath;
+  return `${base}${normalizedPath}`;
+};
+---
+
+<BaseLayout title="Work — Digital Transformation at Scale" currentPage="work">
+    <div class="page-container">
+        <h1>Work — Digital Transformation at Scale</h1>
+        
+        <p>
+            Across four decades, the work has evolved from silicon-layer innovation to cloud-scale 
+            systems to sustainable AI. What remains constant: simplifying complexity, building bridges 
+            across organizations, and moving technology from potential to impact.
+        </p>
+
+        <section class="content-categories">
+            <div class="category-card">
+                <h2><a href={getPath('/work/telecom')}>Telecommunications Era (1980s-90s)</a></h2>
+                <p>
+                    Silicon-layer innovation, telecommunications infrastructure, early digital systems, 
+                    and the foundations of modern connectivity. Building under constraints of limited 
+                    bandwidth, nascent networks, and emerging standards.
+                </p>
+            </div>
+
+            <div class="category-card">
+                <h2><a href={getPath('/work/enterprise')}>Enterprise & Cloud Era (2000s-2010s)</a></h2>
+                <p>
+                    Microsoft platforms, digital analytics at global scale, enterprise transformation, 
+                    and cloud-based systems architecture. Leading cross-functional teams through the 
+                    shift from on-premise to cloud infrastructure.
+                </p>
+            </div>
+
+            <div class="category-card">
+                <h2><a href={getPath('/work/sustainable-ai')}>Sustainable AI Era (2020s)</a></h2>
+                <p>
+                    Climate-resilient AI, sustainable technology innovation, NITK AI Centre of Excellence, 
+                    and regenerative systems design. Building AI that serves humanity and the planet 
+                    without compromising future generations.
+                </p>
+            </div>
+        </section>
+    </div>
+</BaseLayout>

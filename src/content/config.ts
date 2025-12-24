@@ -61,6 +61,38 @@ const blogCollection = defineCollection({
     }),
 });
 
+// Seva collection
+const sevaCollection = defineCollection({
+    type: 'content',
+    schema: z.object({
+        title: z.string(),
+        date: z.date(),
+        type: z.enum(['essay', 'case', 'reflection', 'blog']),
+        themes: z.array(z.string()),
+        era: z.string().nullable(),
+        category: z.enum(['sai-seva', 'heart', 'mentorship']),
+        status: z.enum(['draft', 'published', 'canonical']),
+        summary: z.string(),
+        related: z.array(z.string()).optional(),
+    }),
+});
+
+// Work collection
+const workCollection = defineCollection({
+    type: 'content',
+    schema: z.object({
+        title: z.string(),
+        date: z.date(),
+        type: z.enum(['case', 'reflection', 'essay']),
+        themes: z.array(z.string()),
+        era: z.string().nullable(),
+        category: z.enum(['telecom', 'enterprise', 'sustainable-ai']),
+        status: z.enum(['draft', 'published', 'canonical']),
+        summary: z.string(),
+        related: z.array(z.string()).optional(),
+    }),
+});
+
 // Inspirations collection - no 'era' field, has different categories
 const inspirationsCollection = defineCollection({
     type: 'content',
@@ -81,5 +113,7 @@ export const collections = {
     'cases': casesCollection,
     'reflections': reflectionsCollection,
     'blog': blogCollection,
+    'seva': sevaCollection,
+    'work': workCollection,
     'inspirations': inspirationsCollection,
 };

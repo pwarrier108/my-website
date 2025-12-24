@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const category = 'sai-seva';
+const base = import.meta.env.BASE_URL;
+
+const sevaContent = await getCollection('seva', ({ data }) => 
+    data.category === category && (data.status === 'published' || data.status === 'canonical')
+);
+
+const sortedContent = sevaContent.sort((a, b) => 
+    b.data.date.valueOf() - a.data.date.valueOf()
+);
+---
+
+<BaseLayout title="Sathya Sai Seva Projects — Seva" currentPage="seva">
+    <div class="page-container">
+        <h1>Sathya Sai Seva Projects</h1>
+        
+        <p>
+            Service work inspired by the teachings of Sri Sathya Sai Baba: "Love All, Serve All" 
+            and "Help Ever, Hurt Never." Community service projects, compassionate action, and 
+            service as spiritual practice.
+        </p>
+
+        {sortedContent.length > 0 ? (
+            <ul class="content-list">
+                {sortedContent.map((item) => (
+                    <li class="content-item">
+                        <h3>
+                            <a href={`${base}/seva/sai-seva/${item.slug}`}>
+                                {item.data.title}
+                            </a>
+                        </h3>
+                        {item.data.summary && <p class="summary">{item.data.summary}</p>}
+                        <div class="metadata">
+                            <span class="date">{item.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long' })}</span>
+                            {item.data.era && <span class="era">· Era: {item.data.era}</span>}
+                        </div>
+                    </li>
+                ))}
+            </ul>
+        ) : (
+            <p><em>Content coming soon.</em></p>
+        )}
+    </div>
+</BaseLayout>
