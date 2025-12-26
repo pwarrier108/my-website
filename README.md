@@ -13,18 +13,24 @@ This document explains how the site is run day to day and documents the Phase 1 
 * Deployed automatically using GitHub Pages via GitHub Actions
 * Designed to evolve without structural churn
 
-This repo is the single source of truth.
+This repo is the single source of truth for the website code and content.
 
-### Phase 1 Implementation Complete
+**Note:** Architectural decisions, design rationale, and content strategy are documented separately. This README focuses on operational "how-to" guidance for working with the site.
 
-The site implements:
-- Complete design system (color palette, typography, spacing)
-- Navigation with Service section emphasized
-- Home page structure (needs powerful opening paragraph)
-- Service page with complete real content
+### Phase 1 Implementation Status
+
+**Infrastructure & Architecture:** ✅ Complete
+- Design system implemented (colors, typography, spacing)
+- Navigation structure finalized
+- Content collections schema defined
 - All section pages functional
-- Content schema enforcement
-- Sample essay demonstrating system
+- Deployment pipeline operational
+
+**Content:** In Progress
+- Service page complete with real content
+- Sample essay demonstrates system
+- Home page structure ready (needs opening paragraph)
+- Additional content being added
 
 **Design Decisions:**
 - Sustainable green accent (#2D5F3F) reflects AI focus
@@ -111,8 +117,8 @@ Deployment uses **GitHub Pages + GitHub Actions**:
 There is no manual publishing step and no hosting console login.
 
 **Current deployment:**
-- Live at: `https://pwarrier108.github.io/my-website`
-- Custom domain configured but not active: `padmanandwarrier.com`
+- Live at: `https://padmanandwarrier.com`
+- GitHub Pages URL: `https://pwarrier108.github.io/my-website` (redirects to custom domain)
 
 ---
 
@@ -174,8 +180,7 @@ Structural changes are rare and controlled.
 
 Before making one:
 * Pause content additions
-* Follow /docs/CHANGE-CONTROL.md
-* Document reasoning
+* Document reasoning in commit message
 * Execute once
 * Freeze structure again
 
@@ -253,12 +258,28 @@ The structure is complete and can accept all content without code changes.
 
 ---
 
-## PHASE 1 SUCCESS CRITERIA
+## PHASE 1 STATUS
 
+**Architecture:** ✅ Complete and production-ready
+- ✅ Infrastructure operational
+- ✅ Design system implemented
+- ✅ Navigation finalized
+- ✅ Content schema enforced
+- ✅ New content can be added without code changes
+
+**Content Population:** In Progress
+- ✅ Service page complete
+- ✅ Sample essay demonstrates system
+- ⏳ Home page needs opening paragraph
+- ⏳ Additional essays, cases, reflections needed
+- ⏳ Work case studies needed
+- ⏳ Blog posts needed
+
+**Success Criteria:**
 - ✅ Site feels complete despite limited content
 - ✅ Navigation feels final
-- ✅ New content can be added with no refactor
+- ✅ New content requires no refactoring
 - ✅ Blog does not dominate perception
-- ⏳ Reading experience feels calm and credible (needs powerful opening)
+- ⏳ Reading experience feels calm and credible (needs more content)
 
-**Current status:** Architecture complete, design system implemented, Service page production-ready. Home page needs powerful opening. System ready for content.
+**Bottom Line:** Architecture complete. System ready for content. Content population underway.
