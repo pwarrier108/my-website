@@ -25,10 +25,8 @@ const sortedContent = heartContent.sort((a, b) =>
 ---
 
 <BaseLayout title="Warrier H.E.A.R.T. | Padmanand Warrier">
-  <main class="content-container">
-    <header class="section-header">
-      <h1>The Warrier H.E.A.R.T. Framework</h1>
-    </header>
+  <div class="page-container">
+    <h1>The Warrier H.E.A.R.T. Framework</h1>
 
     <div class="section-intro">
       <div class="heart-logo">
@@ -52,66 +50,48 @@ const sortedContent = heartContent.sort((a, b) =>
       </p>
     </div>
 
-    <section class="content-list">
-      {sortedContent.length === 0 ? (
-        <p class="no-content">Content coming soon.</p>
-      ) : (
-        <ul>
-          {sortedContent.map((item) => (
-            <li class="content-item">
-              <h3>
-                <a href={getPath(`/seva/${item.slug}`)}>{item.data.title}</a>
-              </h3>
-              
-              <div class="metadata">
-                <span class="date">
-                  {new Date(item.data.date).toLocaleDateString('en-US', { 
-                    year: 'numeric', 
-                    month: 'long' 
-                  })}
-                </span>
-                {item.data.type && (
-                  <>
-                    <span class="separator">·</span>
-                    <span class="type">{item.data.type}</span>
-                  </>
-                )}
-                {item.data.era && (
-                  <>
-                    <span class="separator">·</span>
-                    <span class="era">Era: {item.data.era}</span>
-                  </>
-                )}
-              </div>
-              
-              {item.data.summary && (
-                <p class="summary">{item.data.summary}</p>
+    {sortedContent.length === 0 ? (
+      <p class="no-content"><em>Content coming soon.</em></p>
+    ) : (
+      <ul class="content-list">
+        {sortedContent.map((item) => (
+          <li class="content-item">
+            <h3>
+              <a href={getPath(`/seva/${item.slug}`)}>{item.data.title}</a>
+            </h3>
+            
+            <div class="metadata">
+              <span class="date">
+                {new Date(item.data.date).toLocaleDateString('en-US', { 
+                  year: 'numeric', 
+                  month: 'long' 
+                })}
+              </span>
+              {item.data.type && (
+                <>
+                  <span class="separator">·</span>
+                  <span class="type">{item.data.type}</span>
+                </>
               )}
-            </li>
-          ))}
-        </ul>
-      )}
-    </section>
-  </main>
+              {item.data.era && (
+                <>
+                  <span class="separator">·</span>
+                  <span class="era">Era: {item.data.era}</span>
+                </>
+              )}
+            </div>
+            
+            {item.data.summary && (
+              <p class="summary">{item.data.summary}</p>
+            )}
+          </li>
+        ))}
+      </ul>
+    )}
+  </div>
 </BaseLayout>
 
 <style>
-  .content-container {
-    max-width: 680px;
-    margin: 0 auto;
-    padding: 40px 20px;
-  }
-
-  .section-header {
-    margin-bottom: 32px;
-  }
-
-  .section-header h1 {
-    font-size: 36px;
-    line-height: 1.3;
-    margin-bottom: 0;
-  }
-
   .heart-logo {
     float: right;
     margin: 0 0 24px 32px;
@@ -146,69 +126,12 @@ const sortedContent = heartContent.sort((a, b) =>
     margin-bottom: 0;
   }
 
-  .section-intro a {
-    color: #2D5F3F;
-    text-decoration: none;
-  }
-
-  .section-intro a:hover {
-    text-decoration: underline;
-  }
-
-  .content-list ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .content-item {
-    margin-bottom: 64px;
-  }
-
-  .content-item h3 {
-    font-size: 22px;
-    line-height: 1.5;
-    margin-bottom: 8px;
-  }
-
-  .content-item h3 a {
-    color: #2D5F3F;
-    text-decoration: none;
-  }
-
-  .content-item h3 a:hover {
-    text-decoration: underline;
-  }
-
-  .metadata {
-    font-size: 14px;
-    color: #666666;
-    margin-bottom: 16px;
-  }
-
-  .metadata .separator {
-    margin: 0 8px;
-  }
-
-  .summary {
-    line-height: 1.7;
-    color: #1A1A1A;
-  }
-
   .no-content {
     color: #666666;
     font-style: italic;
   }
 
   @media (max-width: 768px) {
-    .content-container {
-      padding: 20px 16px;
-    }
-
-    .section-header h1 {
-      font-size: 28px;
-    }
-
     .heart-logo {
       float: none;
       margin: 0 auto 24px auto;
