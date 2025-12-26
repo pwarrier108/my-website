@@ -4,21 +4,16 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 
 const base = import.meta.env.BASE_URL;
 
-// Helper function to construct paths correctly for both root and subdirectory deploys
 const getPath = (path) => {
   const normalizedPath = path.startsWith('/') ? path : `/${path}`;
-  // If base is root '/', just return the path
   if (base === '/') return normalizedPath;
-  // Otherwise, concatenate base + path
   return `${base}${normalizedPath}`;
 };
 
-// Get all seva content with category 'heart'
 const heartContent = await getCollection('seva', ({ data }) => {
   return data.category === 'heart' && data.status === 'published';
 });
 
-// Sort by date (newest first)
 const sortedContent = heartContent.sort((a, b) => 
   new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
 );
@@ -28,27 +23,23 @@ const sortedContent = heartContent.sort((a, b) =>
   <div class="page-container">
     <h1>The Warrier H.E.A.R.T. Framework</h1>
 
-    <div class="section-intro">
-      <div class="heart-logo">
-        <img src={getPath('/frameworks/warrier-heart/logo.png')} alt="Warrier H.E.A.R.T. Framework" />
-      </div>
-      
-      <p>
-        The Warrier H.E.A.R.T. framework—Human-centric design, Entrepreneurial spirit, Asset development, Regenerative practices, and Technology-enabled connections—took shape over time through observing how technology initiatives succeed or falter depending on what they emphasize. At the 2018 SXSW Cities Summit, where discussions were largely oriented around autonomous vehicles and smart sensors, the human dimension of urban systems appeared less prominently in the conversation. That contrast helped sharpen a question I had been examining: what might change if technology were designed with human flourishing as an explicit objective, rather than as an implicit outcome?
-      </p>
-      
-      <p>
-        The framework reflects an effort to work through that question—a lens for orienting innovation toward enduring human value. It draws on decades of building systems under real constraints, observing both the benefits and the second-order effects of technology-led transformation, and recognizing that how we build shapes outcomes as much as what we build.
-      </p>
-      
-      <p>
-        At NITK, the Warrier H.E.A.R.T. Hub applies these principles through institutional service and campus-based innovation. Established in 2024, the Hub provides a platform for students, researchers, and industry partners to develop solutions addressing urgent challenges—for the campus and for the planet. The campus becomes a living laboratory where sustainable AI and regenerative practices create local impact with global relevance.
-      </p>
-      
-      <p>
-        <em>Read the <a href={getPath('/ideas/philosophy')}>complete framework essay</a> for the full origin story and principles.</em>
-      </p>
-    </div>
+    <img src={getPath('/frameworks/warrier-heart/logo.png')} alt="Warrier H.E.A.R.T. Framework" style="float: right; margin: 0 0 24px 32px; max-width: 250px;" />
+
+    <p>
+      The Warrier H.E.A.R.T. framework—Human-centric design, Entrepreneurial spirit, Asset development, Regenerative practices, and Technology-enabled connections—took shape over time through observing how technology initiatives succeed or falter depending on what they emphasize. At the 2018 SXSW Cities Summit, where discussions were largely oriented around autonomous vehicles and smart sensors, the human dimension of urban systems appeared less prominently in the conversation. That contrast helped sharpen a question I had been examining: what might change if technology were designed with human flourishing as an explicit objective, rather than as an implicit outcome?
+    </p>
+    
+    <p>
+      The framework reflects an effort to work through that question—a lens for orienting innovation toward enduring human value. It draws on decades of building systems under real constraints, observing both the benefits and the second-order effects of technology-led transformation, and recognizing that how we build shapes outcomes as much as what we build.
+    </p>
+    
+    <p>
+      At NITK, the Warrier H.E.A.R.T. Hub applies these principles through institutional service and campus-based innovation. Established in 2024, the Hub provides a platform for students, researchers, and industry partners to develop solutions addressing urgent challenges—for the campus and for the planet. The campus becomes a living laboratory where sustainable AI and regenerative practices create local impact with global relevance.
+    </p>
+    
+    <p>
+      <em>Read the <a href={getPath('/ideas/philosophy')}>complete framework essay</a> for the full origin story and principles.</em>
+    </p>
 
     {sortedContent.length === 0 ? (
       <p class="no-content"><em>Content coming soon.</em></p>
@@ -60,6 +51,10 @@ const sortedContent = heartContent.sort((a, b) =>
               <a href={getPath(`/seva/${item.slug}`)}>{item.data.title}</a>
             </h3>
             
+            {item.data.summary && (
+              <p class="summary">{item.data.summary}</p>
+            )}
+            
             <div class="metadata">
               <span class="date">
                 {new Date(item.data.date).toLocaleDateString('en-US', { 
@@ -69,73 +64,20 @@ const sortedContent = heartContent.sort((a, b) =>
               </span>
               {item.data.type && (
                 <>
-                  <span class="separator">·</span>
+                  <span class="separator"> · </span>
                   <span class="type">{item.data.type}</span>
                 </>
               )}
               {item.data.era && (
                 <>
-                  <span class="separator">·</span>
+                  <span class="separator"> · </span>
                   <span class="era">Era: {item.data.era}</span>
                 </>
               )}
             </div>
-            
-            {item.data.summary && (
-              <p class="summary">{item.data.summary}</p>
-            )}
           </li>
         ))}
       </ul>
     )}
   </div>
 </BaseLayout>
-
-<style>
-  .heart-logo {
-    float: right;
-    margin: 0 0 24px 32px;
-    max-width: 250px;
-  }
-
-  .heart-logo img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  .section-intro {
-    border-top: 1px solid #E5E5E5;
-    border-bottom: 1px solid #E5E5E5;
-    padding: 32px 0;
-    margin-bottom: 64px;
-  }
-
-  .section-intro::after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-
-  .section-intro p {
-    margin-bottom: 24px;
-    line-height: 1.7;
-  }
-
-  .section-intro p:last-child {
-    margin-bottom: 0;
-  }
-
-  .no-content {
-    color: #666666;
-    font-style: italic;
-  }
-
-  @media (max-width: 768px) {
-    .heart-logo {
-      float: none;
-      margin: 0 auto 24px auto;
-      max-width: 200px;
-    }
-  }
-</style>

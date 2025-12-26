@@ -1,0 +1,70 @@
+---
+title: "Life - Live It, Love It, Leave It: Mentoring Young Adults"
+type: reflection
+date: 2025-12-26
+category: mentorship
+themes: ["young adults", "spiritual guidance", "life philosophy", "leadership", "service"]
+era: 2010s Service Era
+status: published
+summary: Reflections on serving as Young Adult Advisor for Region 6 of the Sri Sathya Sai International Organization, and the closing message I offered before leaving the region and role
+---
+
+Among the various roles I held with the Sri Sathya Sai International Organization (SSSIO), I had the opportunity to serve as Young Adult Advisor for Region 6. The role put me in conversation with young engineers, students, and professionals—people comfortable building technical systems but often uncertain about how to build a life.
+
+They were navigating a peculiar tension: how to hold spiritual values in one hand and career ambitions in the other, how to be in the world but not entirely of it, how to reconcile the idealism of service with the pragmatism of paying rent.
+
+I had lived that tension myself. I understood it not as contradiction but as design constraint.
+
+When I prepared to leave the region and the role as part of my move to Texas, I wanted to offer them something more durable than advice. I wanted to give them a frame—a way of thinking that could outlast my presence and adapt to contexts I could not predict.
+
+The result was a closing message I called "Life—Live It, Love It, Leave It," though really it was an opening: an invitation to think about life the way we think about well-designed systems.
+
+## The Question: What Is Your Exit Strategy?
+
+The concept came from an unlikely source: Steve Jobs' Stanford commencement address, delivered after his cancer diagnosis.
+
+In that speech, Jobs spoke about mortality not as tragedy but as clarity—a forcing function that strips away everything inessential. The line that stayed with me was this: *"Remembering that you are going to die is the best way I know to avoid the trap of thinking you have something to lose."*
+
+This resonated with how I had come to think about life, particularly after years building startups and large-scale systems. In business, we obsess over exit strategies—how to leave, what value to create, when to know it is time to move on. We plan transitions. We design for closure. We think about what we want to leave behind.
+
+But we rarely apply the same rigor to life itself.
+
+So I framed my talk around a simple question: *If we plan exits for businesses, why not for life?*
+
+Not in a morbid sense. Not as preparation for death in the literal sense, but as preparation for living with intention. What would it mean to think of each phase of life—career, relationships, service—as something with entry and exit conditions? What would it mean to ask, regularly, "Am I building something worth leaving behind?"
+
+The young adults responded not because the idea was novel, but because it named something they had felt but not articulated. They were already making career choices, relationship commitments, and service decisions. This frame gave them permission to think systemically about those choices—to see them not as isolated events but as part of a larger design.
+
+## The Framework: Life as Architecture
+
+The talk covered several interconnected themes: managing time as a way of managing life, seeking inspiration over validation, innovating with compassion, and—most centrally—the concept of having an exit strategy for life. Drawing on Steve Jobs' Stanford speech about mortality as clarity, I asked: if we plan exits for businesses, why not for life? What would it mean to live each phase intentionally, building something worth leaving behind?
+
+The full presentation is documented in detail in my Ideas section: [Life—Live It, Love It, Leave It: A Framework for Intentional Living](/ideas/philosophy/life-live-love-leave).
+
+## What This Taught Me About Mentorship
+
+Looking back, what strikes me is not the content of the talk but the response. The young adults did not need me to tell them what to do. They needed a structure that helped them ask better questions.
+
+This is what mentorship is, I think: not the transfer of answers but the offering of frameworks. Not prescription but pattern recognition. Not "do this" but "here is a way to think about this, and here is why it might matter."
+
+The exit strategy frame worked not because it was profound but because it was portable. It traveled with them. Years later, I still hear from people who reference it—not as dogma, but as touchstone. They adapted it to contexts I never imagined. They made it their own.
+
+That is the test of a good frame: does it let go of you, or does it require you to keep holding it?
+
+## The Continuity Between Spiritual and Systems Thinking
+
+One of the things I learned in this role was that spiritual guidance and systems thinking are not separate disciplines. They are the same practice applied to different domains.
+
+Both ask: What is the structure beneath the surface? What patterns repeat? What constraints shape outcomes? What would change if we changed the frame?
+
+The young adults I worked with were engineers, analysts, product managers. They knew how to debug code. They knew how to optimize processes. But they had not been taught to apply the same rigor to their own lives.
+
+Once they saw that connection—that you could architect a life the way you architect a system—they did not need me anymore. They had the tools.
+
+## Mentorship as Knowledge Transfer
+
+I documented the talk not for legacy but for utility. If the framework helped one person, it might help others. The ideas were not mine alone—they came from Jobs, Watts, Covey, Tagore, and decades of experience. Making them accessible seemed reasonable.
+
+The young adults in Region 6 taught me as much as I taught them. They showed me what questions the next generation is asking. They reminded me that clarity is not the same as certainty. They demonstrated that spiritual values and practical ambition are not opposites—they are design partners.
+
+I left that role knowing I had learned more than I had given. That is how mentorship should work.

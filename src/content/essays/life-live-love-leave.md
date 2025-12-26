@@ -1,0 +1,44 @@
+---
+title: "Life - Live It, Love It, Leave It: A Framework for Intentional Living"
+type: essay
+date: 2025-12-26
+category: philosophy
+themes: ["life philosophy", "intentional living", "exit strategy", "spiritual practice", "systems thinking"]
+era: 2010s Service Era
+status: published
+summary: A framework for living intentionally, drawing on the business concept of exit strategy and applying it to life itself—asking what it means to build something worth leaving behind
+---
+
+**[This essay is under development. The framework is referenced in context in the [Young Adults mentorship reflection](/seva/mentorship/ya-exit-strategy-mentorship).]**
+
+---
+
+## Core Concept
+
+If we plan exit strategies for businesses, why not for life?
+
+This framework, originally presented as closing remarks to young adults in the Sri Sathya Sai Organization before my move to Texas, applies systems thinking to intentional living. Drawing on Steve Jobs' Stanford commencement speech about mortality as clarity, it asks: what would change if we regularly remembered that our time is finite?
+
+## The Framework
+
+*[Full framework details to be added]*
+
+The presentation covered:
+- Love yourself, love others
+- Life as art, not destination (Alan Watts)
+- Managing time, managing life (Covey matrix)
+- Doing what scares you
+- Reading voraciously
+- Seeking inspiration (Abdul Kalam)
+- Innovating with compassion
+- Being a mensch (Guy Kawasaki)
+- Having an exit strategy for life (Steve Jobs)
+- Maintaining bold vision (Rabindranath Tagore)
+
+## Context
+
+*[To be expanded with full presentation details, references, and elaboration on each principle]*
+
+---
+
+**Related:** [Life—Live It, Love It, Leave It: Mentoring Young Adults in the Sai Organization](/seva/mentorship/ya-exit-strategy-mentorship)

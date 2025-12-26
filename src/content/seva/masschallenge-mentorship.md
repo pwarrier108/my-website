@@ -1,0 +1,96 @@
+---
+title: "Mentoring Startups: MassChallenge Texas and the Question-Based Method"
+type: reflection
+date: 2025-12-26
+category: mentorship
+themes: ["startups", "entrepreneurship", "MassChallenge", "market research", "probing questions"]
+era: 2010s Service Era
+status: published
+summary: Reflections on mentoring and judging startups in the inaugural 2018 MassChallenge Texas cohort, conducting market research for portfolio companies, and developing a question-based approach to cutting through assumptions.
+---
+
+When I moved to Austin in 2017, I joined [MassChallenge Texas](https://masschallenge.org) as both mentor and judge for their inaugural accelerator cohort. MassChallenge is a well-regarded zero-equity startup accelerator—one that takes no ownership stake in the companies it supports—and the Texas program was just launching its first cohort of 84 startups in April 2018.
+
+I wanted to stay connected to how the next generation of builders thought about problems. I also wanted to test whether the patterns I had recognized across decades of technology work applied to early-stage ventures operating under very different constraints.
+
+What I learned was clarifying: most startups do not fail because they lack talent or ambition. They fail because they do not ask the right questions early enough.
+
+## MassChallenge Texas: The 2018 Inaugural Cohort
+
+[MassChallenge Texas](https://masschallenge.org) opened applications in late 2017 with a rare joint announcement by the mayors of Austin and San Antonio. The program, located at WeWork West 6th in Austin, ran from April through August 2018 and culminated in an awards ceremony where $500,000 in equity-free cash prizes were distributed to top startups.
+
+The inaugural cohort of 84 companies came from around the world, spanning industries from agriculture tech to healthcare to digital infrastructure. These were not ideas on napkins—these were teams with early traction, paying pilots, and real technical execution. But most were operating with incomplete information about their markets, their customers, and their own assumptions.
+
+My role was twofold: mentor individual startups throughout the program, and judge finalists for the cash awards.
+
+As a mentor, I worked closely with several companies on questions of product-market fit, go-to-market strategy, and business model sustainability. The feedback I received from mentees was consistent: I asked questions that forced them to articulate assumptions they had not yet examined.
+
+One founder, Mohit Juneja, later wrote that I "employed asking probing questions" and would "cut any BS during management meetings and get straight to the core." Another, William Böll, described my approach as helping him "recognize, understand, and explain complex business relationships" through "unconventional wisdom" and "tremendous energy."
+
+What they were describing was not wisdom. It was method.
+
+## The Question-Based Method
+
+As a judge, I reviewed dozens of pitches across sectors I knew deeply and sectors I knew not at all. The judging document I prepared shows a consistent pattern: I was not evaluating ideas. I was evaluating the quality of thinking beneath the ideas.
+
+The questions I asked fell into a few recurring categories:
+
+**Bottom-up validation:** "You claim a $10 billion market. Can you describe your addressable market in bottom-up terms, building up from your sales pipeline?"
+
+**Real differentiation:** "Your marketing message is something any competitor could say. What is unique about you that cannot be copied?"
+
+**Business model sustainability:** "At your current burn rate and revenue projection, when do you break even? What assumptions are you making about customer acquisition cost and churn?"
+
+**Competitive moats:** "Why can't a larger player copy this and crush you? What is your defensible advantage?"
+
+**Execution realism:** "How many pilots do you need to validate this? What is your expected sales cycle? How will you actually reach customers at scale?"
+
+These were not gotcha questions. They were forcing functions. If a founder could not answer them clearly, it meant they had not yet done the work to understand their own business. And if they had not done that work, no amount of capital or talent would save them.
+
+## Market Research: nVolve Technologies Millennial Focus Group
+
+As part of [MassChallenge](https://masschallenge.org) volunteer work, we offered our experience to companies in the cohort. [nVolve Technologies](https://nvolvetechnologies.com), one of the startups I worked with, was building prefabricated, energy-efficient homes targeting millennial homebuyers. William Böll, whom I had been mentoring, was wrestling with a classic product-market fit question: what do millennials actually want in a home?
+
+Working with an intern, I designed and facilitated two focus groups—one with entrepreneurial millennials at WeWork, another with student millennials at UT Austin. We used card sort exercises to prioritize features and structured discussions to surface unspoken needs and deal-breakers. We were not asking people what they wanted. We were watching what they valued when forced to make tradeoffs.
+
+The findings were delivered as a structured report with start-stop-continue recommendations. Though the work was offered voluntarily, I gained rich experience in understanding how to validate assumptions through disciplined discovery.
+
+## Startup Crawls, Stalls, and Falls
+
+Toward the end of the accelerator, I gave a presentation to the cohort called "Startup Crawls, Stalls, and Falls." It was a taxonomy of failure modes I had witnessed or experienced firsthand across my own startup attempts and decades of watching companies rise and collapse.
+
+The framework was simple:
+
+**Crawls** — When you have all the right inputs (team, tools, process) but no momentum. It feels like you are always stuck in second gear.
+
+**Stalls** — When investor meetings do not convert, pilots do not close, and progress stops but you do not yet realize it. The moment calls, but nothing moves.
+
+**Falls** — When attrition begins, traction evaporates, and the collapse becomes visible but often too late to reverse.
+
+Each mode had symptoms, causes, and solutions. The goal was not to discourage but to normalize failure as data—to help founders see that failure is not a moral judgment but a systems outcome, a result of constraints, timing, market dynamics, and decisions made under incomplete information.
+
+The presentation is documented separately and will be published as an essay in my Ideas section: [Startup Crawls, Stalls, and Falls: A Taxonomy of Failure Modes](/ideas/leadership/startup-crawls-stalls-falls).
+
+## What This Taught Me About Mentorship
+
+The mentorship I provided at MassChallenge was different from the spiritual guidance I offered young adults in the Sai Organization. The context was different. The questions were different. But the underlying practice was the same.
+
+Good mentorship is not about having answers. It is about helping people ask better questions.
+
+The founders I worked with were smart, capable, and resourceful. What they lacked was not intelligence but pattern recognition. They had not yet failed enough to know what failure looked like before it arrived. They had not yet seen the early signals—the stalls disguised as pivots, the crawls mistaken for deliberate pacing, the falls preceded by months of denial.
+
+My job was not to tell them what to do. My job was to ask questions that forced them to see their own assumptions clearly enough to test them.
+
+This is what the testimonials were describing. Not wisdom, but method. A way of engaging that cuts through optimism and gets to structure. A way of asking "why?" and "how do you know?" until the foundation either holds or cracks.
+
+## The Continuity Across Contexts
+
+Whether mentoring young adults navigating spiritual and career decisions, or mentoring founders navigating product-market fit and capital constraints, the practice is the same: clarity through inquiry.
+
+Both spiritual guidance and startup mentorship require the same discipline: listen for what is not being said, ask what is not being questioned, and help people see the structure beneath their assumptions.
+
+In both cases, the mentor does not solve the problem. The mentor creates conditions where the person can solve it themselves.
+
+I left MassChallenge Texas having learned as much as I gave. The founders taught me what the next generation values, how they think about risk, and where the gaps are between ambition and execution. They reminded me that failure is not the opposite of success—it is the tuition you pay for pattern recognition.
+
+Mentorship, I continue to believe, is not a transfer of knowledge. It is a practice of creating clarity through questions, and then stepping back to let people use that clarity to build what they need to build.

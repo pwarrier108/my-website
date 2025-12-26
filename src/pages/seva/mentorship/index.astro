@@ -19,9 +19,7 @@ const sortedContent = sevaContent.sort((a, b) =>
         <h1>Mentorship</h1>
         
         <p>
-            NITK alumni networks, student mentorship programs, entrepreneurial ecosystems, 
-            and pathways for young engineers to learn, lead, and serve with integrity. 
-            Mentorship that scales beyond individuals to build lasting capability.
+            From guiding young adults in spiritual communities to mentoring startups in entrepreneurial ecosystems to building alumni networks and student mentorship programs at NITK—mentorship that scales beyond individuals to build lasting capability.
         </p>
 
         {sortedContent.length > 0 ? (
@@ -29,7 +27,7 @@ const sortedContent = sevaContent.sort((a, b) =>
                 {sortedContent.map((item) => (
                     <li class="content-item">
                         <h3>
-                            <a href={`${base}/seva/mentorship/${item.slug}`}>
+                            <a href={`${base}seva/mentorship/${item.slug}`}>
                                 {item.data.title}
                             </a>
                         </h3>
