@@ -1,9 +1,9 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import { getPath } from '../../../utils/pathUtils';
 
 const category = 'telecom';
-const base = import.meta.env.BASE_URL;
 
 const workContent = await getCollection('work', ({ data }) => 
     data.category === category && (data.status === 'published' || data.status === 'canonical')
@@ -29,7 +29,7 @@ const sortedContent = workContent.sort((a, b) =>
                 {sortedContent.map((item) => (
                     <li class="content-item">
                         <h3>
-                            <a href={`${base}/work/telecom/${item.slug}`}>
+                            <a href={getPath(`/work/telecom/${item.slug}`)}>
                                 {item.data.title}
                             </a>
                         </h3>

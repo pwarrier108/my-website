@@ -1,17 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import sadhyaImage from '../content/home/homepage/images/sadhya-homepage.jpg';
-
-const base = import.meta.env.BASE_URL;
-
-// Helper function to construct paths correctly for both root and subdirectory deploys
-const getPath = (path) => {
-  const normalizedPath = path.startsWith('/') ? path : `/${path}`;
-  // If base is root '/', just return the path
-  if (base === '/') return normalizedPath;
-  // Otherwise, concatenate base + path
-  return `${base}${normalizedPath}`;
-};
+import { getPath } from './utils/pathUtils';
 ---
 
 <BaseLayout title="Padmanand Warrier" currentPage="home">
@@ -23,8 +13,8 @@ const getPath = (path) => {
     <h1>Welcome</h1>
     <p>
       My journey spans many roles—engineer, product leader, inventor, author, mentor, philanthropist, and spiritual aspirant. 
-      Technology and industry shaped my career, but service, community, and inner inquiry have shaped my life’s journey since childhood. 
-      I follow the teachings of <a href="https://www.srisathyasai.org/pages/index.html">Sri Sathya Sai Baba</a>, whose guidance to “Love All, Serve All” and “Help Ever, Hurt Never” 
+      Technology and industry shaped my career, but service, community, and inner inquiry have shaped my life's journey since childhood. 
+      I follow the teachings of <a href="https://www.srisathyasai.org/pages/index.html">Sri Sathya Sai Baba</a>, whose guidance to "Love All, Serve All" and "Help Ever, Hurt Never" 
       continues to influence how I build, teach, and contribute.
     </p>
 
@@ -38,9 +28,9 @@ const getPath = (path) => {
     />
 
     <p>
-      My roots trace back to Kerala, and the idea of a traditional <a href="https://en.wikipedia.org/wiki/Sadya">“Onam Sadhya”</a> offers a useful way to think about my vision for this site:
+      My roots trace back to Kerala, and the idea of a traditional <a href="https://en.wikipedia.org/wiki/Sadya">"Onam Sadhya"</a> offers a useful way to think about my vision for this site:
       a single leaf holding many distinct elements—technical work, reflective writing, institutional service—
-      juxtaposed with intent. It reflects variety, not fragmentation; coherence without uniformity. Like the Sadhya’s flavors—sweet, salty, spicy, bitter—life’s lessons come in many forms, all to be cherished.
+      juxtaposed with intent. It reflects variety, not fragmentation; coherence without uniformity. Like the Sadhya's flavors—sweet, salty, spicy, bitter—life's lessons come in many forms, all to be cherished.
     </p>
 
     <!-- =========================
@@ -113,7 +103,7 @@ const getPath = (path) => {
       </p>
       <ul>
         <li>How do you build at scale and transform organizations without losing the human?</li>
-        <li>What holds when the playbook doesn’t exist?</li>
+        <li>What holds when the playbook doesn't exist?</li>
         <li>How do constraints breed better systems?</li>
       </ul>
 
@@ -167,7 +157,7 @@ const getPath = (path) => {
         Some are foundational classics; others are unexpected discoveries that have changed my thinking in small but profound ways.
       </p>
 
-      <p><em>Begin here if you’re curious about:</em></p>
+      <p><em>Begin here if you're curious about:</em></p>
       <ul>
         <li>the people and experiences that shaped my worldview</li>
         <li>guidance from Sri Sathya Sai Baba and other spiritual influences</li>
@@ -181,7 +171,7 @@ const getPath = (path) => {
          Sanskrit Closing
     ========================== -->
     <section class="home-section learner-note">
-      <h2>A Lifelong Learner’s Note</h2>
+      <h2>A Lifelong Learner's Note</h2>
       <p>
         I seek inspiration from a Sanskrit verse that resonates with my beliefs about knowledge and wisdom.
       </p>

@@ -1,9 +1,9 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import { getPath } from '../../../utils/pathUtils';
 
 const category = 'mentorship';
-const base = import.meta.env.BASE_URL;
 
 const sevaContent = await getCollection('seva', ({ data }) => 
     data.category === category && (data.status === 'published' || data.status === 'canonical')
@@ -27,7 +27,7 @@ const sortedContent = sevaContent.sort((a, b) =>
                 {sortedContent.map((item) => (
                     <li class="content-item">
                         <h3>
-                            <a href={`${base}seva/mentorship/${item.slug}`}>
+                            <a href={getPath(`/seva/mentorship/${item.slug}`)}>
                                 {item.data.title}
                             </a>
                         </h3>

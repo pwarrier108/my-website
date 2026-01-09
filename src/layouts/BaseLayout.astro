@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { getPath } from '../utils/pathUtils';
 
 interface Props {
     title: string;
@@ -7,16 +8,6 @@ interface Props {
 }
 
 const { title, currentPage = '' } = Astro.props;
-const base = import.meta.env.BASE_URL;
-
-// Helper function to construct paths correctly for both root and subdirectory deploys
-const getPath = (path) => {
-  const normalizedPath = path.startsWith('/') ? path : `/${path}`;
-  // If base is root '/', just return the path
-  if (base === '/') return normalizedPath;
-  // Otherwise, concatenate base + path
-  return `${base}${normalizedPath}`;
-};
 ---
 
 <!DOCTYPE html>

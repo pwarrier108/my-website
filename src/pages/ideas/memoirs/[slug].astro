@@ -3,11 +3,11 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
-    // Get all content types for memoirs category
-    const essays = await getCollection('essays', ({ data }) => data.category === 'memoirs');
-    const cases = await getCollection('cases', ({ data }) => data.category === 'memoirs');
-    const reflections = await getCollection('reflections', ({ data }) => data.category === 'memoirs');
-    const blog = await getCollection('blog', ({ data }) => data.category === 'memoirs');
+    // Get all content types for memoir category (singular, not 'memoirs')
+    const essays = await getCollection('essays', ({ data }) => data.category === 'memoir');
+    const cases = await getCollection('cases', ({ data }) => data.category === 'memoir');
+    const reflections = await getCollection('reflections', ({ data }) => data.category === 'memoir');
+    const blog = await getCollection('blog', ({ data }) => data.category === 'memoir');
     
     const allContent = [...essays, ...cases, ...reflections, ...blog];
     

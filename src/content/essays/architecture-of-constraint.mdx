@@ -13,9 +13,9 @@ Every large-scale system eventually encounters its limits. The question is not w
 
 The fundamental tension in systems design lies between flexibility and control. We want systems that adapt to changing requirements, yet we also need predictable behavior under load. We want modularity that allows independent evolution, yet we require coordination that prevents chaos. These are not contradictions to be resolved, but dualities to be managed.
 
-Consider what happens when a system reaches capacity. The naive response is to add resources—more servers, more bandwidth, more processing power. But resources alone do not solve architectural limitations. A poorly designed system will waste abundant resources just as surely as it choked on scarcity. The constraint is not capacity; it is the system's relationship to capacity.
+Consider what happens when a system reaches capacity. The naive response is to add resources—more servers, more bandwidth, more processing power. But resources alone do not solve architectural limitations. A poorly designed system will waste abundant resources just as surely as it choked on scarcity. The constraint is not capacity; it is the system’s relationship to capacity.
 
-This insight became critical during my work on Microsoft's Outlook Web Access in the early 2000s. We inherited a system designed for thousands of concurrent users, but needed to serve millions. The existing architecture could not simply be "scaled up" through hardware. We had to redesign how the system thought about users, sessions, and state.
+This insight became critical during my work on Microsoft’s Outlook Web Access in the early 2000s. We inherited a system designed for thousands of concurrent users, but needed to serve millions. The existing architecture could not simply be “scaled up” through hardware. We had to redesign how the system thought about users, sessions, and state.
 
 The breakthrough came from recognizing that not all constraints are problems. Some constraints are load-bearing walls—remove them and the structure collapses. Others are temporary scaffolding from an earlier phase of construction. The art lies in distinguishing between the two.
 

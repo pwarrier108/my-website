@@ -1,14 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
-
-const base = import.meta.env.BASE_URL;
-
-const getPath = (path) => {
-  const normalizedPath = path.startsWith('/') ? path : `/${path}`;
-  if (base === '/') return normalizedPath;
-  return `${base}${normalizedPath}`;
-};
+import { getPath } from '../../../utils/pathUtils';
 
 const heartContent = await getCollection('seva', ({ data }) => {
   return data.category === 'heart' && data.status === 'published';
@@ -38,7 +31,7 @@ const sortedContent = heartContent.sort((a, b) =>
     </p>
     
     <p>
-      <em>Read the <a href={getPath('/ideas/philosophy')}>complete framework essay</a> for the full origin story and principles.</em>
+      <em>Read the <a href={getPath('/ideas/philosophy/smart-cities-need-heart')}>complete framework essay</a> for the full origin story and principles.</em>
     </p>
 
     {sortedContent.length === 0 ? (
@@ -48,7 +41,7 @@ const sortedContent = heartContent.sort((a, b) =>
         {sortedContent.map((item) => (
           <li class="content-item">
             <h3>
-              <a href={getPath(`/seva/${item.slug}`)}>{item.data.title}</a>
+              <a href={getPath(`/seva/heart/${item.slug}`)}>{item.data.title}</a>
             </h3>
             
             {item.data.summary && (
