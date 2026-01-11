@@ -3,46 +3,57 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import { getPath } from '../../../utils/pathUtils';
 
-const category = 'telecom';
-
-const workContent = await getCollection('work', ({ data }) => 
-    data.category === category && (data.status === 'published' || data.status === 'canonical')
+const telecomWork = await getCollection('work', ({ data }) => 
+    data.category === 'telecom' && data.status === 'published'
 );
 
-const sortedContent = workContent.sort((a, b) => 
+const sortedWork = telecomWork.sort((a, b) => 
     b.data.date.valueOf() - a.data.date.valueOf()
 );
+
+const formatDate = (date) => {
+    return new Intl.DateTimeFormat('en-US', { 
+        month: 'long', 
+        year: 'numeric' 
+    }).format(date);
+};
 ---
 
-<BaseLayout title="Telecommunications Era (1980s-90s) — Work" currentPage="work">
+<BaseLayout title="1980s: Telecommunications Era - Padmanand Warrier" currentPage="work">
     <div class="page-container">
-        <h1>Telecommunications Era (1980s-90s)</h1>
-        
-        <p>
-            Silicon-layer innovation, telecommunications infrastructure, early digital systems, 
-            and the foundations of modern connectivity. Building under constraints of limited 
-            bandwidth, nascent networks, and emerging standards.
+        <h1>1980s: Telecommunications Era</h1>
+
+        <p class="mb-lg">
+            Building infrastructure when bits moved over wires and innovation happened at 
+            the silicon layer. The constraints were absolute, and they taught everything.
         </p>
 
-        {sortedContent.length > 0 ? (
+        {sortedWork.length > 0 && (
             <ul class="content-list">
-                {sortedContent.map((item) => (
+                {sortedWork.map((item) => (
                     <li class="content-item">
-                        <h3>
+                        <h2 class="content-item-title">
                             <a href={getPath(`/work/telecom/${item.slug}`)}>
                                 {item.data.title}
                             </a>
-                        </h3>
-                        {item.data.summary && <p class="summary">{item.data.summary}</p>}
+                        </h2>
                         <div class="metadata">
-                            <span class="date">{item.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long' })}</span>
-                            {item.data.era && <span class="era">· Era: {item.data.era}</span>}
+                            <span class="metadata-item">
+                                <span class="metadata-label">
+                                    {item.data.type.charAt(0).toUpperCase() + item.data.type.slice(1)}
+                                </span>
+                            </span>
+                            <span class="metadata-item">
+                                Published {formatDate(item.data.date)}
+                            </span>
+                            {item.data.era && (
+                                <span class="metadata-item"> · Era: {item.data.era}</span>
+                            )}
                         </div>
+                        <p class="content-item-summary">{item.data.summary}</p>
                     </li>
                 ))}
             </ul>
-        ) : (
-            <p><em>Content coming soon.</em></p>
         )}
     </div>
 </BaseLayout>

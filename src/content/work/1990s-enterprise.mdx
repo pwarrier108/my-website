@@ -1,0 +1,66 @@
+---
+title: "The 1990s: Making Enterprise Systems Earn Trust"
+type: reflection
+date: 2025-01-11
+category: enterprise
+themes: ["enterprise systems", "replication", "reliability engineering", "dial-up to broadband"]
+era: "1990s Enterprise"
+status: published
+summary: As proprietary networks gave way to TCP/IP and PCs became infrastructure, the decade tested whether telecommunications lessons could scale when trust became the limiting factor.
+---
+
+By the early 1990s, some of the constraints that had defined the previous decade were easing—but not disappearing. Proprietary networks were giving way to TCP/IP and PCs were more prevalant in corporate offices. The commercial internet was emerging, but enterprise systems were still brittle, fragmented, and difficult to operate at scale.
+
+I joined **Compaq Computer Corporation** at that inflection point—moving from building network infrastructure under scarcity to helping enterprise systems function under growth. The lessons from the telecommunications era still applied: when systems expand faster than understanding, trust becomes the limiting factor.
+
+## From Remote Access to Replication
+
+One of my first projects at Compaq focused on a deceptively simple problem: how to disseminate technical knowledge to field engineers spread across geographies, working over slow and unreliable dial-up connections. Remote-control tools such as PC Anywhere were common, and online services framed how people thought about connectivity.
+
+Instead, we chose **Lotus Notes**, then still early in its evolution. The reason was architectural rather than tactical: replication. Notes assumed disconnection as a reasonable operating condition. Engineers could synchronize overnight, work locally during the day, and reconnect when the network allowed. The system aligned itself with reality rather than fighting it.
+
+That choice reinforced a principle that would repeat throughout the decade: systems that acknowledge constraints are trusted more than systems that pretend they do not exist.
+
+## Learning Resilience at Server Scale
+
+As Compaq expanded from PCs into enterprise servers, I moved into the Server Division under a brilliant engineering leader with an intuitive grasp of where real systems fail. This was an era of enforced heterogeneity. Customers ran Banyan VINES, Novell NetWare, IBM OS/2, and an emerging Windows NT, often simultaneously.
+
+The challenge was not choosing a single winner. It was making systems survive coexistence.
+
+Our execs made two strategic decisions when it mattered. One was backing NetWare where it was strong while committing early to NT as the future. I was part of the initial technical discussions with Microsoft to ensure NT could fully support Compaq servers. The other was recognizing that enterprise success depended less on peak hardware performance and more on operability.
+
+We introduced "smart install" kits—pre-integrated firmware, drivers, and operating system components—that allowed servers to be brought up reliably in the field. We invested in remote management cards that enabled administrators to diagnose systems without physical access. Our RAID controllers monitored drive behavior and surfaced early warning signals before failures occurred. At the time, this was described as reliability engineering. In hindsight, it was early predictive systems thinking—born from operational necessity rather than algorithmic ambition.
+
+## Networking Experiments and the Limits of Hardware Thinking
+
+Midway through the decade, Compaq began exploring networking in earnest. I joined early efforts evaluating routers, switches, and remote access platforms, including work with partners such as **Cisco Systems**. One ambitious initiative attempted to build a router using PC hardware—an attractive idea grounded in cost economics and familiarity.
+
+It failed. Not because the hardware was inadequate, but because the software ecosystem was decisive. IOS was the product, not the box. That lesson—that platforms win through ecosystems and operating models, not components—proved durable and transferable.
+
+My role increasingly shifted toward technical due diligence: evaluating vendors such as **U.S. Robotics**, assessing architectural viability, and helping executives separate short-term differentiation from long-term sustainability. The work was less about endorsement and more about judgment.
+
+## The Internet Arrives—Behind Walls
+
+As the decade progressed, the internet became visible to consumers—but not yet open. Walled gardens such as **AOL** and **CompuServe** defined how most people experienced being "online." These platforms abstracted complexity, bundled content, and monetized access—but they also constrained possibility.
+
+Dial-up modems strained under growing demand. Latency became a feature users simply endured. The limits of voice-band connectivity were no longer theoretical; they were experiential. The industry could see the ceiling.
+
+## Scalable Network Architecture and the Patent
+
+The work on remote access, network scalability, and distributed systems culminated in a formal contribution: a patent granted in October 1999 for scalable network systems that could handle remote access at enterprise scale. The architecture addressed many of the coordination problems we'd encountered—how to manage distributed nodes, maintain coherent state, and scale access infrastructure without centralized bottlenecks.
+
+This wasn't invention for its own sake. It was codifying lessons learned from years of building systems that needed to work across geographies, handle disconnection gracefully, and scale without requiring complete architectural overhaul. The patent formalized insights about how distributed systems should coordinate when connectivity is unreliable and scale is unpredictable.
+
+## Dial-Up Was Over
+
+By the late 1990s, it was clear that dial-up—no matter how optimized—had reached the end of its usefulness. The question was no longer *whether* broadband would replace it, but *how* it would arrive, who would control it, and whether it would be designed for scale from the outset.
+
+That realization drew me into broadband—specifically ADSL—with a focus on bringing high-speed connectivity to consumers without replicating the operational failures of earlier systems. Self-installation, observability, graceful failure, and economic scalability mattered more than raw speed.
+
+The decade closed with a clear transition underway: connectivity itself was becoming the platform. To borrow Sun Microsystems tagline: *"The Network is the Computer"*.
+
+## What the Decade Taught
+
+The 1990s reinforced a lesson introduced in the telecommunications era but tested at scale: technology earns adoption by being dependable. Systems succeed when they are easy to deploy, observable when they fail, and honest about their limits. Growth does not eliminate constraints—it changes where they appear.
+
+As dial-up faded and broadband emerged, those lessons became the foundation for the next era, where connectivity would no longer be a bottleneck, but an assumption—and where the consequences of design choices would play out at planetary scale.

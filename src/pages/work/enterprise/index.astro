@@ -3,46 +3,55 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import { getPath } from '../../../utils/pathUtils';
 
-const category = 'enterprise';
-
-const workContent = await getCollection('work', ({ data }) => 
-    data.category === category && (data.status === 'published' || data.status === 'canonical')
+const enterpriseWork = await getCollection('work', ({ data }) => 
+    data.category === 'enterprise' && data.status === 'published'
 );
 
-const sortedContent = workContent.sort((a, b) => 
+const sortedWork = enterpriseWork.sort((a, b) => 
     b.data.date.valueOf() - a.data.date.valueOf()
 );
+
+const formatDate = (date) => {
+    return new Intl.DateTimeFormat('en-US', { 
+        month: 'long', 
+        year: 'numeric' 
+    }).format(date);
+};
 ---
 
-<BaseLayout title="Enterprise & Cloud Era (2000s-2010s) — Work" currentPage="work">
+<BaseLayout title="1990s: Enterprise Systems - Padmanand Warrier" currentPage="work">
     <div class="page-container">
-        <h1>Enterprise & Cloud Era (2000s-2010s)</h1>
-        
-        <p>
-            Microsoft platforms, digital analytics at global scale, enterprise transformation, 
-            and cloud-based systems architecture. Leading cross-functional teams through the 
-            shift from on-premise to cloud infrastructure.
+        <h1>1990s: Enterprise Systems</h1>
+
+        <p class="mb-lg">
+            The decade when networks became backbones and enterprise software meant real 
+            integration across platforms, organizations, and geographies.
         </p>
 
-        {sortedContent.length > 0 ? (
+        {sortedWork.length > 0 && (
             <ul class="content-list">
-                {sortedContent.map((item) => (
+                {sortedWork.map((item) => (
                     <li class="content-item">
-                        <h3>
+                        <h2 class="content-item-title">
                             <a href={getPath(`/work/enterprise/${item.slug}`)}>
                                 {item.data.title}
                             </a>
-                        </h3>
-                        {item.data.summary && <p class="summary">{item.data.summary}</p>}
+                        </h2>
                         <div class="metadata">
-                            <span class="date">{item.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long' })}</span>
-                            {item.data.era && <span class="era">· Era: {item.data.era}</span>}
+                            <span class="metadata-item">
+                                <span class="metadata-label">
+                                    {item.data.type.charAt(0).toUpperCase() + item.data.type.slice(1)}
+                                </span>
+                            </span>
+                            <span class="metadata-item">Published {formatDate(item.data.date)}</span>
+                            {item.data.era && (
+                                <span class="metadata-item"> · Era: {item.data.era}</span>
+                            )}
                         </div>
+                        <p class="content-item-summary">{item.data.summary}</p>
                     </li>
                 ))}
             </ul>
-        ) : (
-            <p><em>Content coming soon.</em></p>
         )}
     </div>
 </BaseLayout>

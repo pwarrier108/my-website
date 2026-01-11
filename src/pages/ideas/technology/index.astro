@@ -41,14 +41,20 @@ const formatDate = (date) => {
             <ul class="content-list">
                 {allContent.map((item) => (
                     <li class="content-item">
-                        <h3 class="content-item-title">
-                            <a href={getPath(`/ideas/technology/${item.slug}`)}>{item.data.title}</a>
-                        </h3>
+                        <h2 class="content-item-title">
+                            <a href={getPath(`/ideas/technology/${item.slug}`)}>
+                                {item.data.title}
+                            </a>
+                        </h2>
                         <div class="metadata">
                             <span class="metadata-item">
-                                <span class="metadata-label">{item.data.type.charAt(0).toUpperCase() + item.data.type.slice(1)}</span>
+                                <span class="metadata-label">
+                                    {item.data.type.charAt(0).toUpperCase() + item.data.type.slice(1)}
+                                </span>
                             </span>
-                            <span class="metadata-item">Published {formatDate(item.data.date)}</span>
+                            <span class="metadata-item">
+                                Published {formatDate(item.data.date)}
+                            </span>
                             {item.data.era && (
                                 <span class="metadata-item">Era: {item.data.era}</span>
                             )}

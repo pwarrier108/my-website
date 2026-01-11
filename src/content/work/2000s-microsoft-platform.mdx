@@ -1,0 +1,154 @@
+---
+title: Microsoft Platform Evolution — The 2000s
+type: case
+date: 2024-01-15
+category: microsoft-platform
+themes: ["broadband", "standards", "entrepreneurship", "platform ecosystems", "failure"]
+era: "2000s - Platform Evolution"
+status: published
+summary: From DSL standards to startup failure to building platform ecosystems at Microsoft—learning that adoption barriers are rarely technical.
+---
+
+The transition from Compaq happened in 1997. I joined the broadband wave just as it was forming—first at Texas Instruments, then as a founder of a startup that raised capital, built technology, filed patents, and failed anyway.
+
+The 2000s weren't one story. They were a progression through four distinct contexts: building infrastructure standards, betting on entrepreneurial vision, absorbing the lessons of failure, and learning to build at platform scale. What connects them is a question that took a decade to answer: *How do you move technology from potential to adoption when the barriers aren't technical?*
+
+## Building the Broadband Foundation
+
+In 1997, DSL was a paradox. The technology worked. The telcos had infrastructure. But residential adoption was stuck because of one operational reality: every installation required a technician to visit the home and install a splitter—a small box that separated voice and data signals on the phone line.
+
+This "truck roll" cost $100-150 per customer. For mass market adoption, that was fatal.
+
+I joined Texas Instruments' Broadband Access Group as a marketing program manager, responsible for accelerating residential broadband with TI-enabled reference platforms. The role put me at the intersection of chipset development, OEM relationships (Dell, Compaq, Gateway), equipment vendors (Cisco, 3Com, Ericsson), and service providers (SBC, Verizon, Prodigy).
+
+But the real work happened in standards committees.
+
+### Standards Are Developed After-Hours
+
+TI sent me to represent the company on the Universal Access Working Group—an industry consortium working on what would become G.lite, or splitterless DSL. The formal name was ITU-T G.992.2. The informal goal was to eliminate the truck roll.
+
+The technical trade-off was clear: G.lite would deliver 1.5 Mbps downstream instead of the 6+ Mbps possible with full ADSL. But it would be plug-and-play. No splitter or technician visit. Just plug the modem into the phone jack and it worked.
+
+The challenge wasn't the technology. It was navigating a landscape of competing interests.
+
+We were racing against cable modems for residential broadband dominance. TI was developing chipsets that could work with both DSL and cable front-ends—smartly hedging our bets. But to make DSL viable, we needed a standard that telcos, equipment manufacturers, and chipset vendors could all support.
+
+This meant working with competitors. Alcatel and Globespan. Companies that would normally guard their technical approaches were sitting in the same standards meetings, trying to converge on something everyone could build.
+
+A senior executive at Compaq was pushing hard for the splitterless approach. He understood that ease of installation would determine adoption more than raw speed. Intel, Compaq, and Microsoft formed the Promoters group, rallying support from US regional bell operating companies and major international carriers: NTT, British Telecom, France Telecom, Deutsche Telekom, Singapore Telecom.
+
+The breakthrough came from recognizing that standards work isn't primarily technical negotiation. It's human negotiation.
+
+I learned this at dinner one night—sitting with engineers and product managers from competing companies, commiserating about the bottlenecks of our respective organizations. Someone made a joke about how none of our companies would let us just agree on the obvious answer. We laughed. And then we started talking through the technical sticking points without our corporate hats. We were one team.
+
+The next morning's session was different. We'd already worked out the hard parts.
+
+My background in writing helped—I was authoring a technical reference on xDSL architecture for McGraw-Hill, which meant understanding the technology deeply enough to explain it clearly. That book, published in October 1999, synthesized years of standards work, architectural decisions, and deployment lessons. The soft skills developed during my college days at KREC and through years of navigating disparate personalities in service work and enterprise projects all converged in those standards meetings. You had to understand the technology deeply enough to see where real constraints existed and where they were negotiating leverage. You had to read the room and know when to push and when to let something sit.
+
+By October 1998, we had ITU approval. By June 1999, we demonstrated interoperability at SUPERCOMM. G.lite worked. The standard had been completed faster than any previous ITU standard—including V.90 modems, which had taken 18 months.
+
+We'd built the foundation for mass market broadband.
+
+## The Entrepreneurial Vision
+
+In May 2000, I left TI to start Media3Net.
+
+The bet was this: broadband access was about to explode. But service providers didn't have infrastructure to deliver *services*—only connectivity. They could pipe bits to your home, but they couldn't provision voice, video, or data services dynamically.
+
+We built service orchestration software—a gateway in the network operations center and one in the customer premises—that could provision and manage broadband services dynamically without manual configuration for each change. The architecture was transport-agnostic, an overlay that sat on top of existing broadband infrastructure and added intelligence.
+
+Looking back now, we were building service-oriented architecture before SOA was formalized. The separation of the control plane from the data plane, tracing the concept back to ISDN. The core idea that services could be composed, activated on-demand, and billed automatically. It was Cloud Orchestration before "cloud" was a term.
+
+We raised over $1 million in early-stage funding. We filed patents with a healthy IP pipeline. We hired teams in the US and India. We built working prototypes. We had customer validation and were about to close on committments for funding with customer trials.
+
+The technology worked. But the market disappeared.
+
+### The Crash
+
+In 2000, the telecom sector began imploding. Companies that had been spending billions on infrastructure stopped. The dot-com bubble burst. Capital dried up.
+
+Then came September 11th, 2001.
+
+There was no single moment when Media3Net ended. It was a series of realizations: the Series A round we'd been negotiating wouldn't close. The customers who'd committed to trials were freezing all new spending. The window of opportunity we'd been racing toward had closed.
+
+We wound down in July 2001.
+
+What I learned from failure was more valuable than what I'd learned from success.
+
+The technology had been sound. The architecture was ahead of its time—concepts we'd built would reappear years later in cloud platforms. But timing matters. Market conditions matter. And no amount of technical correctness compensates for building in a market that's contracting.
+
+The other lesson was harder: as a founder, you live with the weight of the people who believed in your vision. Investors who wrote checks. Employees who took the risk. Partners who committed resources. When you wind down, you carry that.
+
+It taught me humility.
+
+For six months afterward, I worked at a professional services firm. I had to make cold sales calls to put food on the table. I was recovering. Rebuilding. Figuring out wht to do next. It was some of the darkest days of my professional career.
+
+## Platform Ecosystems at Microsoft
+
+I got a lucky break in late 2002. A general manager from Microsoft visiting his family in Dallas for the holidays met me. He heard my story. He invited me to move up to Seattle and join his team.
+
+My first few years would span two major initiatives: Windows Media Center (the company's entry into home entertainment) and the 64-bit Windows transition (rebuilding the ecosystem for a new architecture).
+
+Both taught me something I hadn't fully understood before: at platform scale, your constraints aren't technical. They're ecosystem constraints.
+
+### Media Center: Building the Digital Living Room
+
+Windows Media Center was Microsoft's first real venture into the home. The vision: a Windows PC that functioned as both a regular desktop and a full-fledged TV set-top box with a "10-foot viewing experience."
+
+This required redesigning UI for TV viewing distance, engineering real-time video performance without compromising playback quality, negotiating content rights with providers, and partnering with OEMs willing to build consumer-friendly PCs designed for living rooms, not corporate desks.
+
+Samsung and HP stepped up as pioneers. They built units that looked like home entertainment components—sleek, quiet, designed to sit next to your TV. They included remote controls to control the TV input.
+
+We also developed the Media Center Extender—a companion device that let you project content to a TV far from the PC—and the Wireless Smart Display, a portable screen you could carry around the house.
+
+If you look back now, the Wireless Smart Display was the beginning of tablets. The Media Center Extender was the precursor to casting technologies like Miracast. The 10-foot UI principles we developed became foundational for mobile touch interfaces.
+
+But the insight that unlocked adoption came from recognizing a constraint we'd imposed on ourselves.
+
+### The USB Breakthrough
+
+Our original requirement was that the TV tuner card—the hardware that processed television signals—be embedded inside the PC as a PCI card. We believed this was necessary for performance.
+
+But this created a barrier. It locked OEMs into rigid configurations. They couldn't independently bundle the PC and the TV tuner. It limited flexibility and increased manufacturing complexity.
+
+The breakthrough was simple: build an external TV tuner that connected via USB.
+
+This one decision changed the adoption curve. OEMs could now bundle PCs and USB TV tuners independently. Future versions of Media Center could be added to existing PCs. The ecosystem became flexible.
+
+Eventually, Media Center's DNA migrated into Xbox, Zune, and later Windows phones. But the foundation—the recognition that home entertainment required different design principles than productivity computing—was laid in those early years.
+
+### Building Ecosystem Readiness for 64-bit Windows
+
+The second major initiative was the transition to 64-bit Windows.
+
+On the surface, this was about performance and memory addressing. 64-bit architecture allowed Windows to address more than 4GB of RAM, enabling new classes of applications.
+
+But for us, it was about something else: driver quality.
+
+In 32-bit Windows, poorly written third-party drivers were causing system crashes—the infamous Blue Screen of Death. It wasn't a Windows problem, but users blamed Windows for bad experiences caused by hardware vendors' code.
+
+We saw 64-bit as an inflection point. A moment where we could enforce better driver behavior and validate quality at the kernel level.
+
+But the industry wasn't going to fall in line voluntarily. Independent hardware vendors operated on razor-thin margins. Transitioning to 64-bit meant rewriting drivers, investing in testing, and getting certification—all costs with no immediate revenue.
+
+So we partnered with Intel and AMD to create an industry-wide push. We offered incentives, built sample code and test suites, and created certification programs.
+
+I led road shows—particularly in Asia—working with major hardware vendors across device categories: network cards, graphics cards, printers, cameras, storage devices.
+
+The goal wasn't technical evangelism. It was coordination. We built tools, reduced friction, and measured progress transparently. In one year, the ecosystem went from fragmentation to consumer ready.
+
+What made it work was recognizing that ecosystem readiness is a coordination problem, not a technology problem. You build the tools. You reduce friction. You create incentives. And you show up—literally, in person—to work through the specific barriers each partner faces.
+
+## What the 2000s Taught
+
+By the end of the decade, the work had moved across four distinct contexts: infrastructure standards, startup entrepreneurship, consumer platform partnerships, and enterprise ecosystem coordination.
+
+What connected them was learning to see where the real barriers lived.
+
+At TI, the barrier to DSL adoption wasn't bandwidth—it was installation cost. G.lite succeeded by accepting a performance trade-off to eliminate operational friction.
+
+At Media3Net, the barrier wasn't technology—it was market timing. No amount of architectural elegance matters if the market is contracting.
+
+At Microsoft, the barriers weren't technical. For Media Center, they were ecosystem readiness and self-imposed constraints. The USB tuner breakthrough came from making the system modular. For x64, the barrier was coordination across a fragmented industry. The answer was transparency, incentives, and presence.
+
+The lesson became clear: when something isn't being adopted, the real barrier is rarely the thing you're building.

@@ -2,6 +2,7 @@
    GLOBAL DESIGN SYSTEM
    Personal Website - Phase 1
    Following UX Design Specification
+   UPDATED: Optimized spacing for better rhythm
    ============================================ */
 
 /* ============================================
@@ -35,12 +36,12 @@
     --line-height-comfortable: 1.5;
     --line-height-reading: 1.75;
     
-    /* Spacing System - 8px base unit */
+    /* Spacing System - 8px base unit - UPDATED */
     --space-xs: 16px;   /* 2 units */
     --space-sm: 24px;   /* 3 units */
     --space-md: 32px;   /* 4 units */
-    --space-lg: 64px;   /* 8 units */
-    --space-xl: 96px;   /* 12 units */
+    --space-lg: 48px;   /* 6 units - REDUCED from 64px */
+    --space-xl: 64px;   /* 8 units - REDUCED from 96px */
     
     /* Layout - Single standard width aligned with navigation */
     --content-width: 900px;               /* Standard for all pages - aligns with nav */
@@ -263,15 +264,15 @@ strong {
 }
 
 /* ============================================
-   LAYOUT CONTAINERS
+   LAYOUT CONTAINERS - UPDATED
    ============================================ */
 
 /* Single standard container - used for ALL pages */
 .page-container {
     max-width: var(--content-width);  /* 900px - aligns with nav */
     margin: 0 auto;
-    padding: var(--space-lg) var(--container-padding-mobile) var(--space-lg);
-    padding-top: 24px;
+    padding: var(--space-md) var(--container-padding-mobile) var(--space-lg);
+    padding-top: 20px;  /* UPDATED: Reduced from 24px */
 }
 
 /* Legacy class name support - maps to same styling */
@@ -376,11 +377,11 @@ strong {
 }
 
 /* ============================================
-   LONG-FORM READING
+   LONG-FORM READING - UPDATED
    ============================================ */
 
 .reading-header {
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-sm);  /* UPDATED: Reduced from var(--space-md) */
 }
 
 .reading-title {
@@ -388,11 +389,11 @@ strong {
 }
 
 .reading-content {
-    margin-top: var(--space-lg);
+    margin-top: 24px;
 }
 
 /* ============================================
-   CONTENT WRAPPER (used in templates)
+   CONTENT WRAPPER (used in templates) - UPDATED
    ============================================ */
 
 .content {
@@ -400,24 +401,30 @@ strong {
 }
 
 .content h2 {
-    margin-top: 64px;
-    margin-bottom: 24px;
+    margin-top: 56px;      /* UPDATED: Reduced from 64px */
+    margin-bottom: 20px;   /* UPDATED: Reduced from 24px */
 }
 
 .content h3 {
-    margin-top: 48px;
+    margin-top: 40px;      /* UPDATED: Reduced from 48px */
     margin-bottom: 16px;
 }
 
 .content p {
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 }
 
 .content img {
     max-width: 100%;
     height: auto;
-    margin: 32px 0;
+    margin: 24px 0;
     display: block;
+}
+
+.content-categories {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
 }
 
 /* ============================================

@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+    const workContent = await getCollection('work', ({ data }) => 
+        data.category === 'cloud-mobile'
+    );
+    
+    return workContent.map(entry => ({
+        params: { slug: entry.slug },
+        props: { entry }
+    }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+// Format date
+const formatDate = (date) => {
+    return new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' }).format(date);
+};
+---
+
+<BaseLayout title={`${entry.data.title} - Padmanand Warrier`} currentPage="work">
+    <div class="page-container">
+        <h1>{entry.data.title}</h1>
+        
+        <div class="metadata">
+            <span class="metadata-item">
+                <span class="metadata-label">{entry.data.type.charAt(0).toUpperCase() + entry.data.type.slice(1)}</span>
+            </span>
+            <span class="metadata-item">Published {formatDate(entry.data.date)}</span>
+            {entry.data.era && (
+                <span class="metadata-item"> · Era: {entry.data.era}</span>
+            )}
+            {entry.data.themes && entry.data.themes.length > 0 && (
+                <span class="metadata-item">
+                     · Themes: {entry.data.themes.join(', ')}
+                </span>
+            )}
+        </div>
+
+        <div class="content">
+            <Content />
+        </div>
+    </div>
+</BaseLayout>
+
+<style>
+    .metadata {
+        font-size: 14px;
+        color: #666666;
+        font-style: italic;
+        margin-bottom: 48px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid #E5E5E5;
+    }
+
+    .metadata-item {
+        margin-right: 8px;
+    }
+
+    .metadata-label {
+        font-weight: 500;
+    }
+
+    .content {
+        line-height: 1.7;
+    }
+
+    .content :global(h2) {
+        margin-top: 64px;
+        margin-bottom: 24px;
+    }
+
+    .content :global(h3) {
+        margin-top: 48px;
+        margin-bottom: 16px;
+    }
+
+    .content :global(p) {
+        margin-bottom: 24px;
+    }
+
+    .content :global(img) {
+        max-width: 100%;
+        height: auto;
+        margin: 32px 0;
+        display: block;
+    }
+</style>

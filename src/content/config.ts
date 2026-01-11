@@ -86,7 +86,7 @@ const workCollection = defineCollection({
         type: z.enum(['case', 'reflection', 'essay']),
         themes: z.array(z.string()),
         era: z.string().nullable(),
-        category: z.enum(['telecom', 'enterprise', 'sustainable-ai']),
+        category: z.enum(['telecom', 'enterprise', 'microsoft-platform', 'cloud-mobile','sustainable-ai']),
         status: z.enum(['draft', 'published', 'canonical']),
         summary: z.string(),
         related: z.array(z.string()).optional(),

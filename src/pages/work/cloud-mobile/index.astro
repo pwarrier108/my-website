@@ -3,11 +3,11 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import { getPath } from '../../../utils/pathUtils';
 
-const sustainableAIWork = await getCollection('work', ({ data }) => 
-    data.category === 'sustainable-ai' && data.status === 'published'
+const cloudMobileWork = await getCollection('work', ({ data }) => 
+    data.category === 'cloud-mobile' && data.status === 'published'
 );
 
-const sortedWork = sustainableAIWork.sort((a, b) => 
+const sortedWork = cloudMobileWork.sort((a, b) => 
     b.data.date.valueOf() - a.data.date.valueOf()
 );
 
@@ -19,13 +19,13 @@ const formatDate = (date) => {
 };
 ---
 
-<BaseLayout title="2020s: Sustainable AI - Padmanand Warrier" currentPage="work">
+<BaseLayout title="2010s: Cloud & Mobile Transformation - Padmanand Warrier" currentPage="work">
     <div class="page-container">
-        <h1>2020s: Sustainable AI</h1>
+        <h1>2010s: Cloud & Mobile Transformation</h1>
 
         <p class="mb-lg">
-            The decade when AI capability outpaced governance, when sustainability became 
-            constraint, and when responsibility had to be architected into systems, not bolted on.
+            The decade when cloud became infrastructure, mobile rewrote every assumption, 
+            and transformation meant rebuilding foundations at scale, not just adding features.
         </p>
 
         {sortedWork.length > 0 && (
@@ -33,7 +33,7 @@ const formatDate = (date) => {
                 {sortedWork.map((item) => (
                     <li class="content-item">
                         <h2 class="content-item-title">
-                            <a href={getPath(`/work/sustainable-ai/${item.slug}`)}>
+                            <a href={getPath(`/work/cloud-mobile/${item.slug}`)}>
                                 {item.data.title}
                             </a>
                         </h2>

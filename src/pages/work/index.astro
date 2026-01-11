@@ -3,41 +3,69 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getPath } from '../../utils/pathUtils';
 ---
 
-<BaseLayout title="Work — Digital Transformation at Scale" currentPage="work">
+<BaseLayout title="Work - Padmanand Warrier" currentPage="work">
     <div class="page-container">
-        <h1>Work — Digital Transformation at Scale</h1>
+        <h1>Work</h1>
         
         <p>
-            Across four decades, the work has evolved from silicon-layer innovation to cloud-scale 
-            systems to sustainable AI. What remains constant: simplifying complexity, building bridges 
-            across organizations, and moving technology from potential to impact.
+            Five decades, five technological eras. Technologies changed, organizations evolved, 
+            roles shifted. What remained constant: simplifying complexity, building bridges, 
+            and moving technology from potential to impact under real constraints.
         </p>
 
         <section class="content-categories">
             <div class="category-card">
-                <h2><a href={getPath('/work/telecom')}>Telecommunications Era (1980s-90s)</a></h2>
+                <h2>
+                    <a href={getPath('/work/telecom')}>
+                        1980s: Telecommunications Era
+                    </a>
+                </h2>
                 <p>
-                    Silicon-layer innovation, telecommunications infrastructure, early digital systems, 
-                    and the foundations of modern connectivity. Building under constraints of limited 
-                    bandwidth, nascent networks, and emerging standards.
+                    Building infrastructure when bits moved over wires and innovation happened at the silicon layer.
                 </p>
             </div>
 
             <div class="category-card">
-                <h2><a href={getPath('/work/enterprise')}>Enterprise & Cloud Era (2000s-2010s)</a></h2>
+                <h2>
+                    <a href={getPath('/work/enterprise')}>
+                        1990s: Enterprise Systems
+                    </a>
+                </h2>
                 <p>
-                    Microsoft platforms, digital analytics at global scale, enterprise transformation, 
-                    and cloud-based systems architecture. Leading cross-functional teams through the 
-                    shift from on-premise to cloud infrastructure.
+                    Connecting organizations as networks became backbones and enterprise software meant real integration.
                 </p>
             </div>
 
             <div class="category-card">
-                <h2><a href={getPath('/work/sustainable-ai')}>Sustainable AI Era (2020s)</a></h2>
+                <h2>
+                    <a href={getPath('/work/microsoft-platform')}>
+                        2000s: Platform Evolution
+                    </a>
+                </h2>
                 <p>
-                    Climate-resilient AI, sustainable technology innovation, NITK AI Centre of Excellence, 
-                    and regenerative systems design. Building AI that serves humanity and the planet 
-                    without compromising future generations.
+                    Shaping ecosystems where hardware met software and the living room became a technology frontier.
+                </p>
+            </div>
+
+            <div class="category-card">
+                <h2>
+                    <a href={getPath('/work/cloud-mobile')}>
+                        2010s: Cloud & Mobile Transformation
+                    </a>
+                </h2>
+                <p>
+                    Rebuilding at scale when the internet became infrastructure and mobile rewrote every assumption.
+                </p>
+            </div>
+
+            <div class="category-card">
+                <h2>
+                    <a href={getPath('/work/sustainable-ai')}>
+                        2020s: Sustainable AI
+                    </a>
+                </h2>
+                <p>
+                    Institutionalizing responsibility as AI capability outpaces governance and sustainability becomes constraint.
                 </p>
             </div>
         </section>
