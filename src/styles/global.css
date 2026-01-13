@@ -413,11 +413,17 @@ strong {
     margin-bottom: 20px;
 }
 
-.content img {
+/* Regular images in content - left aligned */
+.content img:not(.hero-image) {
     max-width: 100%;
     height: auto;
     margin: 24px 0;
     display: block;
+}
+
+/* Hero images - centered, prominent */
+.content .hero-image {
+    margin: var(--space-lg) auto;
 }
 
 .content-categories {
@@ -461,6 +467,29 @@ strong {
     color: var(--color-text-primary);
     font-size: 20px;
     line-height: 1.55;
+}
+
+/* Quoted text with attribution - reusable for teachings, wisdom, citations */
+.quote {
+    margin: 48px 0;
+    padding: 32px;
+    background-color: var(--color-background);
+    border-left: 3px solid var(--color-accent);
+}
+
+.quote-text {
+    font-style: italic;
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--color-text-primary);
+    margin-bottom: 16px;
+}
+
+.attribution {
+    text-align: right;
+    font-style: normal;
+    color: var(--color-text-muted);
+    font-size: 16px;
 }
 
 /* ============================================
@@ -626,9 +655,9 @@ strong {
    HOMEPAGE VISUAL ELEMENTS
    ============================================ */
 
-/* Sadhya image presentation */
-.sadhya-image {
-    max-width: 85%;
+/* Hero image presentation - centered, prominent */
+.hero-image {
+    max-width: 80%;
     height: auto;
     margin: var(--space-lg) auto;
     display: block;
