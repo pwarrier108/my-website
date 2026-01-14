@@ -1,0 +1,79 @@
+---
+title: "Wrangling My 10K+ Photo Collection with Claude AI"
+date: 2025-08-28
+type: blog
+category: technology
+themes: ["AI-Assisted Development", "Systems Building", "Personal Projects", "Vibe Programming"]
+era: "2020s Sustainable AI"
+status: published
+summary: "Building a photo organization app with Claude AI meant coding with an amnesiac genius: brilliant in bursts, forgetful the next day. Four weeks and 4,000 lines of Python later, a messy dump of 10,000+ photos became a searchable, face-clustered, GPS-tagged personal archive—complete with lessons in token limits and regression surprises."
+---
+import photoEditor from './wrangling-10k-photos-claude-ai/wrangling-10k-photos-claude-ai.png';
+
+<img src={photoEditor.src} alt="AI based Photo Editor" style="float: right; max-width: 400px; width: 100%; height: auto; border-radius: 4px; margin: 0 0 24px 24px;" />
+
+For years, I had thousands of photos scattered across drives, phones, and random folders—over 10,000 of them. Finding that one family vacation photo? Forget it.
+
+I tried free apps. I tried paid apps. None of them worked the way I wanted.
+
+So, like any self-respecting engineer faced with an unsolved problem, I decided to build my own. With a lot of help (and plenty of frustrations) from Claude, I ended up with ~4,000 lines of Python and a well-architected app that finally tames my photo chaos.
+
+## The Mess I Started With
+
+- Photos everywhere, completely unsorted
+- GPS and EXIF data buried but unused
+- Duplicates galore
+- No way to simply ask: "Show me vacation photos from 2010"
+
+## What I Built
+
+This turned into a proper, solid app "suite" with three ways to interact:
+
+- **GUI (tkinter):** a desktop photo browser with face-clustering visuals (Windows app)
+- **CLI:** for batch jobs and admin tools
+- **MCP (Claude Desktop):** natural language queries like "Show me beach photos from 2019"
+
+Under the hood:
+
+- EXIF GPS → Google Geocoding API for addresses
+- Face embeddings (128-dim vectors → clustering)
+- SQLite DB with 12 indexes for sub-second search
+- SHA-256 hashing for duplicate detection
+- Batch jobs with configurable chunk sizes (default: 50 photos)
+- PyInstaller builds so the GUI and CLI each runs as a clean .exe
+
+## What I Can Do Now
+
+- Cluster faces across years of family albums
+- Pull up all photos from NITK Surathkal (my alma mater, with its own private beach) in under a second. Or relive my train journey through the breath-taking views of crossing the Western Ghats.
+- Handle 10,000+ photos without breaking a sweat
+- Drag-and-drop to fix face groups when the AI gets it wrong
+- Trace my life through camera tech—started with Nikon, detoured through Sony and Canon, and now most new shots come from my Pixel. My photo library is basically a gadget timeline.
+
+## The Fun (and Frustrations) of Vibe Programming with Claude
+
+Building the system was only half the story. The other half was vibe programming with Claude. Imagine coding with a genius who sometimes nails a solo riff and sometimes forgets what song you're playing. That's what it felt like.
+
+**Token jail.** Claude Pro has a 5-hour reset window. Burn through tokens, and the jam session is over until it resets. I learned quickly to be terse—really terse—in prompts and answers. Concise mode became my secret weapon.
+
+**"Regression is a feature."** With Claude (as with any virtual assistant) context sometimes evaporates. A code block or feature you thought was solid might get rewritten or removed like it never existed. It's like the band forgetting the chorus mid-song. Backups became my religion.
+
+**Spaghetti surprise.** Sometimes Claude would reinvent a method I (we?) had already written—a new riff layered over an old one—leaving me with two slightly different versions and code paths. Without discipline, the whole track turns to noise. Got particularly annoying with lines of duped SQL queries.
+
+**Sprint summaries = survival.** My best hack: at the end of each jam, I made Claude write its own "set list"—a detailed sprint summary of what we just played, which files changed, and what's next. Later, when Claude forgot (as it invariably did), I just fed the set list back in to get us back in rhythm.
+
+In short, this wasn't traditional coding. It was vibe programming with an amnesiac genius: brilliant in bursts, forgetful the next day, and often a little too eager to turn my personal project into a commercial-grade SaaS.
+
+## Was It Worth It?
+
+Absolutely. Now I can search my library by coordinates—"Show me photos near 51.4778° N, 0.0014° W" instantly pulls up shots from my visit to Greenwich Observatory.
+
+But beyond the convenience, this project turned a messy dump of files into something meaningful. I can see not just faces and places, but also the story of my life through metadata—the journeys, the people, even the shift from DSLR to Pixel.
+
+Four weeks, 4,000 lines of code, plenty of "regressions," and a few laughs at Claude's quirks later… yes, it was worth it. And now—dare I say—it's a fully functional, robust, modularized codebase that I'm quite happy with. I have a common set of files that I've successfully shared across my GUI, CLI and MCP implementations.
+
+And of course—like any self-respecting engineer—I'm already thinking about version 2.0: fully local natural-language queries with Ollama, auto-generated photo shows, and interactive map-based browsing.
+
+Because if version 1 let me wrangle my photo chaos, version 2 will let me relive it.
+
+*The article was published on [LinkedIn](https://www.linkedin.com/pulse/wrangling-my-10k-photos-agentic-ai-padmanand-warrier-ktcsc/) on Aug 28, 2025.*
